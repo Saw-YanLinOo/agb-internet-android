@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    app:cardCornerRadius="@dimen/margin_1x"
+    android:minWidth="280dp"
+    app:cardBackgroundColor="@color/colorWhite"
+    android:layout_margin="@dimen/margin_2x"
+    android:layout_gravity="center_horizontal"
+    android:layout_height="wrap_content">
+
+    <TextView
+        android:id="@+id/tvMessage"
+        style="@style/CustomFont"
+        android:layout_width="wrap_content"
+        android:layout_gravity="center"
+        android:layout_margin="@dimen/margin_4x"
+        android:text="@string/invalid_session"
+        android:textStyle="bold"
+        android:textColor="@color/colorPrimary"
+        android:textSize="@dimen/text_subtitle"
+        android:layout_height="wrap_content" />
+
+</androidx.cardview.widget.CardView>

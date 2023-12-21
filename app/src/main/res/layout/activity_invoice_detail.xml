@@ -1,0 +1,405 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+
+    >
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/ly_header"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:background="@color/colorPrimary"
+        >
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/iv_logo"
+            android:layout_width="wrap_content"
+            android:layout_height="?attr/actionBarSize"
+            android:src="@drawable/logo_3"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/iv_back"
+            android:layout_width="wrap_content"
+            android:layout_height="0dp"
+            android:src="@drawable/ic_back_arrow"
+            android:paddingStart="@dimen/margin_4x"
+            android:paddingEnd="@dimen/margin_3x"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@id/iv_logo"
+            app:layout_constraintBottom_toBottomOf="@id/iv_logo"
+            />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.core.widget.NestedScrollView
+        android:id="@+id/layout_main"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/ly_header"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:fillViewport="true">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/colorBackground_1x"
+            >
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/iv_paid"
+                android:layout_width="@dimen/paidImageSize"
+                android:layout_height="@dimen/paidImageSize"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                android:layout_margin="@dimen/margin_3x"
+                android:scaleType="centerCrop"
+                android:src="@drawable/paid"
+                />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                style="@style/CustomFont_Normal_Black"
+                android:id="@+id/lbl_invoice_id"
+                android:layout_margin="@dimen/margin_3x"
+                android:text="@string/lbl_invoice_id"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                style="@style/CustomFont_Normal_Black"
+                android:id="@+id/lbl_invoice_id_dot"
+                android:text="@string/lbl_dot_dot"
+                app:layout_constraintStart_toEndOf="@id/lbl_invoice_id"
+                app:layout_constraintTop_toTopOf="@id/lbl_invoice_id"
+                app:layout_constraintBottom_toBottomOf="@id/lbl_invoice_id"
+                />
+
+
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                style="@style/CustomFont_Normal_Black"
+                android:id="@+id/tv_invoice_id"
+                android:text="20210001001"
+                android:textStyle="bold"
+                android:textIsSelectable="true"
+                app:layout_constraintEnd_toStartOf="@id/iv_paid"
+                app:layout_constraintTop_toTopOf="@id/lbl_invoice_id"
+                app:layout_constraintStart_toEndOf="@id/lbl_invoice_id_dot"
+                />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                style="@style/CustomFont_Normal_Black"
+                android:id="@+id/lbl_service_id"
+                android:text="@string/lbl_service_id"
+                android:layout_marginTop="@dimen/margin_2x"
+                app:layout_constraintStart_toStartOf="@id/lbl_invoice_id"
+                app:layout_constraintTop_toBottomOf="@id/tv_invoice_id"
+                />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                style="@style/CustomFont_Normal_Black"
+                android:id="@+id/lbl_service_id_dot"
+                android:text="@string/lbl_dot_dot"
+                app:layout_constraintStart_toStartOf="@id/lbl_invoice_id_dot"
+                app:layout_constraintTop_toTopOf="@id/lbl_service_id"
+                app:layout_constraintEnd_toEndOf="@id/lbl_invoice_id_dot"
+                />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                style="@style/CustomFont_Normal_Black"
+                android:id="@+id/tv_service_id"
+                android:text="SS-0001"
+                android:textStyle="bold"
+                android:textIsSelectable="true"
+                app:layout_constraintEnd_toStartOf="@id/iv_paid"
+                app:layout_constraintTop_toTopOf="@id/lbl_service_id"
+                app:layout_constraintStart_toEndOf="@id/lbl_service_id_dot"
+                />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                style="@style/CustomFont_Normal_Black"
+                android:id="@+id/lbl_due_date"
+                android:text="@string/lbl_due_date"
+                android:layout_marginTop="@dimen/margin_2x"
+                app:layout_constraintStart_toStartOf="@id/lbl_invoice_id"
+                app:layout_constraintTop_toBottomOf="@id/tv_service_id"
+                />
+            <androidx.appcompat.widget.AppCompatTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                style="@style/CustomFont_Normal_Black"
+                android:id="@+id/lbl_due_date_dot"
+                android:text="@string/lbl_dot_dot"
+                app:layout_constraintStart_toStartOf="@id/lbl_invoice_id_dot"
+                app:layout_constraintTop_toTopOf="@id/lbl_due_date"
+                app:layout_constraintEnd_toEndOf="@id/lbl_invoice_id_dot"
+                />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                style="@style/CustomFont_Normal_Black"
+                android:id="@+id/tv_due_date"
+                android:text="20210001001"
+                android:textStyle="bold"
+                android:textIsSelectable="true"
+                app:layout_constraintEnd_toStartOf="@id/iv_paid"
+                app:layout_constraintTop_toTopOf="@id/lbl_due_date"
+                app:layout_constraintStart_toEndOf="@id/lbl_due_date_dot"
+                />
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/guideline5"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:layout_constraintGuide_percent="0.65"
+                />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/lbl_description"
+                android:layout_width="0dp"
+                android:layout_height="@dimen/size_40"
+                style="@style/CustomFont_Normal_White"
+                android:text="@string/str_description"
+                android:gravity="center"
+                android:textStyle="bold"
+                android:background="@color/colorPrimary"
+                android:layout_marginTop="@dimen/size_40"
+                android:layout_marginStart="@dimen/margin_3x"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="@id/guideline5"
+                app:layout_constraintTop_toBottomOf="@id/iv_paid"
+                />
+
+            <View
+                android:id="@+id/vw_guide"
+                android:layout_width="1dp"
+                android:layout_height="0dp"
+                android:background="@color/colorBlack"
+                app:layout_constraintStart_toEndOf="@id/lbl_description"
+                app:layout_constraintTop_toTopOf="@id/lbl_description"
+                app:layout_constraintBottom_toBottomOf="@id/lbl_description"
+                />
+
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/lbl_amount"
+                android:layout_width="0dp"
+                android:layout_height="@dimen/size_40"
+                style="@style/CustomFont_Normal_White"
+                android:text="@string/lbl_amount"
+                android:gravity="center"
+                android:textStyle="bold"
+                android:background="@color/colorPrimary"
+                android:layout_marginEnd="@dimen/margin_3x"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@id/vw_guide"
+                app:layout_constraintTop_toTopOf="@id/lbl_description"
+                app:layout_constraintBottom_toBottomOf="@id/lbl_description"
+                />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rv_charges"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:background="@color/colorWhite"
+                app:layout_constraintTop_toBottomOf="@id/lbl_description"
+                app:layout_constraintStart_toStartOf="@id/lbl_description"
+                app:layout_constraintEnd_toEndOf="@id/lbl_amount"
+                />
+
+            <View
+                android:id="@+id/vw_vertical"
+                android:layout_width="1dp"
+                android:layout_height="0dp"
+                android:background="@color/colorBlack"
+                app:layout_constraintStart_toStartOf="@id/vw_guide"
+                app:layout_constraintEnd_toEndOf="@id/vw_guide"
+                app:layout_constraintTop_toBottomOf="@id/vw_guide"
+                app:layout_constraintBottom_toTopOf="@id/vw_horizontal"
+                />
+
+            <View
+                android:id="@+id/vw_horizontal"
+                android:layout_width="0dp"
+                android:layout_height="@dimen/margin_1"
+                android:background="@color/colorBlack"
+                app:layout_constraintBottom_toTopOf="@id/lbl_total"
+                app:layout_constraintStart_toStartOf="@id/lbl_description"
+                app:layout_constraintEnd_toEndOf="@id/lbl_amount"
+                />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                style="@style/CustomFont_Normal_Black"
+                android:id="@+id/lbl_total"
+                android:text="@string/lbl_total"
+                android:textStyle="bold"
+                android:gravity="center|end"
+                android:background="@color/colorWhite"
+                android:paddingTop="@dimen/margin_2x"
+                app:layout_constraintTop_toBottomOf="@id/rv_charges"
+                app:layout_constraintStart_toStartOf="@id/rv_charges"
+                app:layout_constraintEnd_toStartOf="@id/guideline5"
+                />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                style="@style/CustomFont_Small_Black"
+                android:id="@+id/tv_total"
+                android:text="1,000,000 MMK"
+                android:gravity="center|end"
+                android:background="@color/colorWhite"
+                android:paddingTop="@dimen/margin_2x"
+                app:layout_constraintStart_toEndOf="@id/lbl_total"
+                app:layout_constraintEnd_toEndOf="@id/rv_charges"
+                app:layout_constraintTop_toBottomOf="@id/rv_charges"
+                app:layout_constraintBottom_toBottomOf="@id/lbl_total"
+                />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                style="@style/CustomFont_Normal_Black"
+                android:id="@+id/lbl_payment_info"
+                android:text="@string/lbl_payment_information"
+                android:textStyle="bold"
+                android:textColor="@color/colorPrimary"
+                android:gravity="center"
+                android:drawableStart="@drawable/ic_baseline_error_24_primary"
+                android:drawablePadding="@dimen/margin_2x"
+                android:layout_marginTop="@dimen/margin_3x"
+                android:background="?attr/selectableItemBackground"
+                app:layout_constraintStart_toStartOf="@id/rv_charges"
+                app:layout_constraintTop_toBottomOf="@id/tv_total"
+                />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btn_receipt"
+                android:layout_width="wrap_content"
+                android:layout_height="@dimen/size_40"
+                style="@style/Button_font_theme"
+                android:text="@string/lbl_receipt"
+                android:textSize="@dimen/text_normal"
+                android:textAllCaps="false"
+                app:cornerRadius="@dimen/margin_1x"
+                android:textStyle="bold"
+                app:icon="@drawable/ic_receipt_invoice"
+                app:iconGravity="textStart"
+                app:backgroundTint="@color/colorPrimaryDark"
+                android:layout_marginEnd="@dimen/margin_3x"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:layout_marginTop="@dimen/margin_4x"
+                android:layout_marginBottom="@dimen/margin_4x"
+                app:layout_constraintVertical_bias="0.0"
+                app:layout_constraintTop_toBottomOf="@id/lbl_payment_info"
+                app:layout_constraintBottom_toBottomOf="parent"
+                />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btn_pay_now"
+                android:layout_width="wrap_content"
+                android:layout_height="@dimen/size_40"
+                style="@style/Button_font_theme"
+                android:text="@string/str_pay_now"
+                android:textSize="@dimen/text_normal"
+                android:textAllCaps="false"
+                app:cornerRadius="@dimen/margin_1x"
+                app:icon="@drawable/ic_pay_now"
+                app:iconGravity="textStart"
+                android:textStyle="bold"
+                app:backgroundTint="@color/colorPrimaryDark"
+                android:layout_marginEnd="@dimen/margin_3x"
+                app:layout_constraintEnd_toStartOf="@id/btn_receipt"
+                android:layout_marginTop="@dimen/margin_4x"
+                android:layout_marginBottom="@dimen/margin_4x"
+                app:layout_constraintVertical_bias="0.0"
+                app:layout_constraintTop_toBottomOf="@id/lbl_payment_info"
+                app:layout_constraintBottom_toBottomOf="parent"
+                />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btn_download"
+                android:layout_width="wrap_content"
+                android:layout_height="@dimen/size_40"
+                style="@style/Button_font_theme"
+                android:text="@string/str_download"
+                android:textSize="@dimen/text_normal"
+                android:textAllCaps="false"
+                app:cornerRadius="@dimen/margin_1x"
+                app:icon="@drawable/ic_download"
+                app:iconGravity="textStart"
+                android:textStyle="bold"
+                android:layout_marginEnd="@dimen/margin_4x"
+                android:layout_marginTop="@dimen/margin_4x"
+                app:layout_constraintVertical_bias="0.0"
+                app:layout_constraintEnd_toStartOf="@id/btn_pay_now"
+                app:layout_constraintTop_toBottomOf="@id/lbl_payment_info"
+                app:layout_constraintBottom_toBottomOf="parent"
+                />
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.core.widget.NestedScrollView>
+
+    <include
+        android:id="@+id/ly_error"
+        layout="@layout/layout_error"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:visibility="gone"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/ly_header"
+        />
+
+    <com.facebook.shimmer.ShimmerFrameLayout
+        android:id="@+id/shimmer_effect"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:visibility="gone"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/ly_header"
+        app:layout_constraintBottom_toBottomOf="parent"
+        >
+
+        <include
+            layout="@layout/view_shimmer_invoice_detail"/>
+
+    </com.facebook.shimmer.ShimmerFrameLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    package="com.agb.billing.customer">
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.READ_MEDIA_IMAGES" />
+    <uses-permission android:name="android.permission.POST_NOTIFICATIONS"/>
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="com.google.android.gms.permission.AD_ID" tools:node="remove"/>
+
+
+    <queries>
+        <package android:name="com.kbzbank.kpaycustomer" />
+    </queries>
+
+    <application
+        android:name=".localizations.AGBApp"
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.AGBBilling"
+        android:usesCleartextTraffic="true"
+        tools:targetApi="m">
+        <activity
+            android:name="com.agb.billing.customer.activities.LaunchScreenActivity"
+            android:exported="true"
+            android:screenOrientation="portrait">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <activity
+            android:name="com.agb.billing.customer.activities.LoginActivity"
+            android:screenOrientation="portrait" />
+
+        <activity
+            android:name="com.agb.billing.customer.activities.ConfirmPasswordActivity"
+            android:screenOrientation="portrait" />
+
+        <activity
+            android:name="com.agb.billing.customer.activities.MainActivity"
+            android:screenOrientation="portrait" />
+
+        <activity
+            android:name="com.agb.billing.customer.activities.MyPlanActivity"
+            android:screenOrientation="portrait" />
+
+        <activity
+            android:name="com.agb.billing.customer.activities.InvoiceActivity"
+            android:screenOrientation="portrait" />
+
+        <activity
+            android:name="com.agb.billing.customer.activities.InvoiceDetailActivity"
+            android:exported="true"
+            android:screenOrientation="portrait">
+
+        </activity>
+
+        <activity
+            android:name="com.agb.billing.customer.activities.ReceiptActivity"
+            android:screenOrientation="portrait" />
+
+        <activity
+            android:name="com.agb.billing.customer.activities.ReceiptDetailActivity"
+            android:screenOrientation="portrait" />
+
+        <activity
+            android:name="com.agb.billing.customer.activities.ProfileActivity"
+            android:screenOrientation="portrait" />
+
+        <activity
+            android:name="com.agb.billing.customer.activities.TermConditionActivity"
+            android:screenOrientation="portrait" />
+
+        <activity
+            android:name="com.agb.billing.customer.activities.SupportActivity"
+            android:screenOrientation="portrait" />
+
+        <activity
+            android:name="com.agb.billing.customer.activities.LanguageActivity"
+            android:screenOrientation="portrait" />
+
+        <activity
+            android:name="com.agb.billing.customer.activities.WebViewActivity"
+            android:screenOrientation="portrait" />
+
+        <activity
+            android:name="com.agb.billing.customer.com.kbzbank.payment.sdk.callback.CallbackResultActivity"
+            android:exported="true"
+            android:screenOrientation="portrait" />
+
+        <activity
+            android:name=".activities.ComplainActivity"
+            android:screenOrientation="portrait" />
+
+        <activity
+            android:name=".activities.ComplainHistoryActivity"
+            android:screenOrientation="portrait" />
+
+        <activity
+            android:name=".activities.CBPayInformationActivity"
+            android:screenOrientation="portrait" />
+
+        <service
+            android:name=".services.PushNotificationService"
+            android:exported="false">
+            <intent-filter>
+                <action android:name="com.google.firebase.MESSAGING_EVENT" />
+            </intent-filter>
+        </service>
+
+        <meta-data
+            android:name="com.google.firebase.messaging.default_notification_channel_id"
+            android:value="@string/default_notification_channel_id" />
+        <meta-data
+            android:name="firebase_messaging_auto_init_enabled"
+            android:value="false" />
+        <meta-data
+            android:name="firebase_analytics_collection_enabled"
+            android:value="false" />
+
+
+    </application>
+
+
+</manifest>

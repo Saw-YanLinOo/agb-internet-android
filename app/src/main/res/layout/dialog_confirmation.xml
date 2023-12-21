@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="@dimen/margin_6x"
+    app:cardCornerRadius="@dimen/margin_2x"
+    app:cardElevation="@dimen/margin_4x"
+    app:cardUseCompatPadding="true">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="@dimen/margin_3x">
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tv_confirm_title"
+            style="@style/CustomFont_Title_Black"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginStart="@dimen/margin_2x"
+            android:layout_marginTop="@dimen/margin_4x"
+            android:layout_marginEnd="@dimen/margin_2x"
+            android:contentDescription="@string/app_name"
+            android:text="@string/str_confirmation"
+            android:textAlignment="center"
+            android:textColor="@color/colorBlack"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="@string/str_confirmation" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tv_confirm_message"
+            style="@style/CustomFont_Normal_Gray"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_margin="@dimen/margin_4x"
+            android:text="@string/desc_do_you_want_to_sure"
+            android:textAlignment="center"
+            android:textColor="@color/colorBlack"
+            android:textColorHint="@color/colorBlack"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tv_confirm_title"
+            />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btn_ok"
+            style="@style/Button_font_theme"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/margin_4x"
+            android:layout_marginTop="@dimen/margin_6x"
+            android:layout_marginEnd="@dimen/margin_2x"
+            android:layout_marginBottom="@dimen/margin_2x"
+            android:padding="@dimen/margin_2x"
+            android:singleLine="true"
+            android:text="@string/str_ok"
+            android:textAllCaps="false"
+            android:textColor="@color/colorWhite"
+            app:backgroundTint="@color/colorPrimary"
+            app:cornerRadius="@dimen/margin_1x"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/guideline"
+            app:layout_constraintTop_toBottomOf="@+id/tv_confirm_message" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.5" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btn_cancel"
+            style="@style/Button_font_theme_unelevated"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/margin_4x"
+            android:layout_marginTop="@dimen/margin_6x"
+            android:layout_marginEnd="@dimen/margin_2x"
+            android:layout_marginBottom="@dimen/margin_2x"
+            android:layout_weight="1"
+            android:padding="@dimen/margin_2x"
+            android:singleLine="true"
+            android:text="@string/str_cancel"
+            android:textAllCaps="false"
+            android:textColor="@color/colorSecondary"
+            app:backgroundTint="@color/colorWhite"
+            app:cornerRadius="@dimen/margin_1x"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/guideline"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tv_confirm_message"
+             />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.cardview.widget.CardView>

@@ -1,0 +1,273 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@android:color/transparent"
+    android:fillViewport="true">
+
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/cv_receipt"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/margin_3x"
+        android:layout_marginTop="@dimen/margin_3x"
+        android:layout_marginEnd="@dimen/margin_3x"
+        app:cardCornerRadius="@dimen/margin_1x"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/colorWhite">
+
+            <View
+                android:id="@+id/vw_title"
+                android:layout_width="0dp"
+                android:layout_height="@dimen/margin_half"
+                android:layout_marginStart="@dimen/margin_2"
+                android:layout_marginTop="@dimen/margin_3x"
+                android:layout_marginEnd="@dimen/margin_2"
+                android:background="@color/colorGray"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/lbl_title" />
+
+            <View
+                android:id="@+id/vw_receipt_id"
+                android:layout_width="0dp"
+                android:layout_height="@dimen/margin_half"
+                android:layout_marginStart="@dimen/margin_2"
+                android:layout_marginTop="@dimen/margin_3x"
+                android:layout_marginEnd="@dimen/margin_2"
+                android:background="@color/colorGray"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tv_receipt_id" />
+
+            <View
+                android:id="@+id/vw_service_id"
+                android:layout_width="0dp"
+                android:layout_height="@dimen/margin_half"
+                android:layout_marginStart="@dimen/margin_2"
+                android:layout_marginTop="@dimen/margin_3x"
+                android:layout_marginEnd="@dimen/margin_2"
+                android:background="@color/colorGray"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tv_service_id" />
+
+            <View
+                android:id="@+id/vw_transaction_id"
+                android:layout_width="0dp"
+                android:layout_height="@dimen/margin_half"
+                android:layout_marginStart="@dimen/margin_2"
+                android:layout_marginTop="@dimen/margin_3x"
+                android:layout_marginEnd="@dimen/margin_2"
+                android:background="@color/colorGray"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tv_transaction_id" />
+
+            <View
+                android:id="@+id/vw_payment_type"
+                android:layout_width="0dp"
+                android:layout_height="@dimen/margin_half"
+                android:layout_marginStart="@dimen/margin_2"
+                android:layout_marginTop="@dimen/margin_3x"
+                android:layout_marginEnd="@dimen/margin_2"
+                android:background="@color/colorGray"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tv_payment_type" />
+
+            <View
+                android:id="@+id/vw_paid_date"
+                android:layout_width="0dp"
+                android:layout_height="@dimen/margin_half"
+                android:layout_marginStart="@dimen/margin_2"
+                android:layout_marginTop="@dimen/margin_3x"
+                android:layout_marginEnd="@dimen/margin_2"
+                android:background="@color/colorGray"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tv_paid_date" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/lbl_title"
+                style="@style/CustomFont_Title_Black"
+                android:layout_width="@dimen/size_105"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/margin_3x"
+                android:background="@color/shimmerColor"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/lbl_receipt_id"
+                style="@style/CustomFont_Small_Black"
+                android:layout_width="@dimen/size_105"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/margin_3x"
+                android:background="@color/shimmerColor"
+                app:layout_constraintBottom_toBottomOf="@id/tv_receipt_id"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="@id/tv_receipt_id" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tv_receipt_id"
+                style="@style/CustomFont_Normal_Black"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/margin_2x"
+                android:layout_marginTop="@dimen/margin_3x"
+                android:layout_marginEnd="@dimen/margin_3x"
+                android:background="@color/shimmerColor"
+                android:gravity="center|end"
+                android:textColor="@color/colorBlack_1x"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@id/lbl_receipt_id"
+                app:layout_constraintTop_toBottomOf="@id/vw_title" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/lbl_service_id"
+                style="@style/CustomFont_Small_Black"
+                android:layout_width="@dimen/size_105"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/margin_3x"
+                android:background="@color/shimmerColor"
+                app:layout_constraintBottom_toBottomOf="@id/tv_service_id"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="@id/tv_service_id" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tv_service_id"
+                style="@style/CustomFont_Small_Black"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/margin_2x"
+                android:layout_marginTop="@dimen/margin_3x"
+                android:layout_marginEnd="@dimen/margin_3x"
+                android:background="@color/shimmerColor"
+                android:gravity="center|end"
+                android:textColor="@color/colorBlack_1x"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@id/lbl_service_id"
+                app:layout_constraintTop_toBottomOf="@id/vw_receipt_id" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/lbl_transaction_id"
+                style="@style/CustomFont_Small_Black"
+                android:layout_width="@dimen/size_105"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/margin_3x"
+                android:background="@color/shimmerColor"
+                app:layout_constraintBottom_toBottomOf="@id/tv_transaction_id"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="@id/tv_transaction_id" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tv_transaction_id"
+                style="@style/CustomFont_Normal_Black"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/margin_2x"
+                android:layout_marginTop="@dimen/margin_3x"
+                android:layout_marginEnd="@dimen/margin_3x"
+                android:background="@color/shimmerColor"
+                android:gravity="center|end"
+                android:textColor="@color/colorBlack_1x"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@id/lbl_transaction_id"
+                app:layout_constraintTop_toBottomOf="@id/vw_service_id" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/lbl_payment_type"
+                style="@style/CustomFont_Small_Black"
+                android:layout_width="@dimen/size_105"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/margin_3x"
+                android:background="@color/shimmerColor"
+                app:layout_constraintBottom_toBottomOf="@id/tv_payment_type"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="@id/tv_payment_type" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tv_payment_type"
+                style="@style/CustomFont_Normal_Black"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/margin_2x"
+                android:layout_marginTop="@dimen/margin_3x"
+                android:layout_marginEnd="@dimen/margin_3x"
+                android:background="@color/shimmerColor"
+                android:gravity="center|end"
+                android:textColor="@color/colorBlack_1x"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@id/lbl_payment_type"
+                app:layout_constraintTop_toBottomOf="@id/vw_transaction_id" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/lbl_paid_date"
+                style="@style/CustomFont_Small_Black"
+                android:layout_width="@dimen/size_105"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/margin_3x_2plus"
+                android:background="@color/shimmerColor"
+                app:layout_constraintBottom_toBottomOf="@id/tv_paid_date"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="@id/tv_paid_date" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tv_paid_date"
+                style="@style/CustomFont_Normal_Black"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/margin_2x"
+                android:layout_marginTop="@dimen/margin_3x"
+                android:layout_marginEnd="@dimen/margin_3x"
+                android:background="@color/shimmerColor"
+                android:gravity="center|end"
+                android:textColor="@color/colorBlack_1x"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@id/lbl_paid_date"
+                app:layout_constraintTop_toBottomOf="@id/vw_payment_type" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/lbl_amount"
+                style="@style/CustomFont_Small_Black"
+                android:layout_width="@dimen/size_105"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/margin_4x"
+                android:layout_marginTop="@dimen/margin_2"
+                android:background="@color/shimmerColor"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="@id/tv_amount" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tv_amount"
+                style="@style/CustomFont_Normal_Black"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/margin_2x"
+                android:layout_marginTop="@dimen/margin_3x"
+                android:layout_marginEnd="@dimen/margin_3x"
+                android:layout_marginBottom="@dimen/margin_3x"
+                android:background="@color/shimmerColor"
+                android:gravity="center|end"
+                android:textColor="@color/colorBlack_1x"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@id/lbl_amount"
+                app:layout_constraintTop_toBottomOf="@id/vw_paid_date" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </com.google.android.material.card.MaterialCardView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

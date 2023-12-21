@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="@dimen/margin_6x"
+    app:cardCornerRadius="@dimen/margin_2x"
+    app:cardElevation="@dimen/margin_4x"
+    app:cardUseCompatPadding="true">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="@dimen/margin_3x">
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tv_choose_payment"
+            style="@style/CustomFont_Title_Black"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginStart="@dimen/margin_2x"
+            android:layout_marginTop="@dimen/margin_4x"
+            android:layout_marginEnd="@dimen/margin_2x"
+            android:contentDescription="@string/app_name"
+            android:text="Type Payment Id"
+            android:textAlignment="center"
+            android:textColor="@color/colorBlack"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"/>
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline6"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.5"
+            />
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/ly_payment_id"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margin_3x"
+            android:layout_marginStart="@dimen/margin_2x"
+            android:layout_marginEnd="@dimen/margin_2x"
+            app:errorTextColor="@color/colorSecondary"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tv_choose_payment">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/et_payment_id"
+                style="@style/CustomFont_Normal_Black"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:hint="Payment ID"
+                android:inputType="text"
+                android:textColorHint="@color/colorBlack" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btn_pay"
+            style="@style/Button_font_theme"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/size_40"
+            android:layout_marginStart="@dimen/margin_2x"
+            android:layout_marginTop="@dimen/margin_3x"
+            android:layout_marginEnd="@dimen/margin_2x"
+            android:layout_marginBottom="@dimen/margin_3x"
+            android:insetLeft="0dp"
+            android:insetTop="0dp"
+            android:insetRight="0dp"
+            android:insetBottom="0dp"
+            android:minHeight="0dp"
+            android:text="@string/str_pay"
+            android:textAllCaps="false"
+            android:textSize="@dimen/text_normal"
+            app:backgroundTint="@color/colorPrimary"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/ly_payment_id" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.cardview.widget.CardView>

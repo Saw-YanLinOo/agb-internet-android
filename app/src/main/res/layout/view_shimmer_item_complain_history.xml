@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tv_submit_date"
+        style="@style/CustomFont_Normal_Black"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/margin_3x"
+        android:layout_marginTop="@dimen/margin_2x"
+        android:layout_marginEnd="@dimen/margin_3x"
+        android:background="@color/shimmerColor"
+        android:drawablePadding="@dimen/margin_3x"
+        android:gravity="center_vertical"
+        android:textColor="@color/colorBlack_1x"
+        app:layout_constraintEnd_toStartOf="@id/tv_status"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:text=" " />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tv_active_plan"
+        style="@style/CustomFont_Normal_Black"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/margin_2x"
+        android:layout_marginEnd="@dimen/margin_3x"
+        android:background="@color/shimmerColor"
+        android:drawablePadding="@dimen/margin_2x_2plus"
+        android:gravity="center_vertical"
+        android:textColor="@color/colorBlack_1x"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@id/tv_submit_date"
+        app:layout_constraintTop_toBottomOf="@id/tv_submit_date" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tv_plan_amount"
+        style="@style/CustomFont_Small_Black"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/margin_2x"
+        android:drawableStart="@drawable/ic_plan_package"
+        android:drawablePadding="@dimen/margin_3x_2plus"
+        android:gravity="center_vertical"
+        android:textColor="@color/colorBlack_1x"
+        android:visibility="gone"
+        app:layout_constraintEnd_toEndOf="@id/tv_active_plan"
+        app:layout_constraintStart_toStartOf="@id/tv_active_plan"
+        app:layout_constraintTop_toBottomOf="@id/tv_active_plan" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tv_category"
+        style="@style/CustomFont_Normal_Black"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/margin_2x"
+        android:background="@color/shimmerColor"
+        android:drawablePadding="@dimen/margin_3x"
+        android:gravity="center_vertical"
+        android:textColor="@color/colorBlack_1x"
+        app:layout_constraintEnd_toEndOf="@id/tv_active_plan"
+        app:layout_constraintStart_toStartOf="@id/tv_active_plan"
+        app:layout_constraintTop_toBottomOf="@id/tv_active_plan" />
+
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tv_message"
+        style="@style/CustomFont_Normal_Black"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/margin_2x"
+        android:background="@color/shimmerColor"
+        android:drawablePadding="@dimen/margin_3x"
+        android:gravity="center_vertical"
+        android:textColor="@color/colorBlack_1x"
+        app:layout_constraintEnd_toEndOf="@id/tv_active_plan"
+        app:layout_constraintStart_toStartOf="@id/tv_active_plan"
+        app:layout_constraintTop_toBottomOf="@id/tv_category" />
+
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tv_reply_message"
+        style="@style/CustomFont_Normal_Black"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/margin_2x"
+        android:background="@color/shimmerColor"
+        android:drawablePadding="@dimen/margin_3x"
+        android:gravity="center_vertical"
+        android:textColor="@color/colorBlack_1x"
+        app:layout_constraintEnd_toEndOf="@id/tv_active_plan"
+        app:layout_constraintStart_toStartOf="@id/tv_active_plan"
+        app:layout_constraintTop_toBottomOf="@id/tv_message" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tv_status"
+        style="@style/CustomFont_Small_Black"
+        android:layout_width="@dimen/margin_7x10"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="@dimen/margin_3x"
+        android:drawablePadding="@dimen/margin_2x"
+        android:gravity="center_vertical|center_horizontal"
+        android:paddingStart="@dimen/margin_2x"
+        android:paddingEnd="@dimen/margin_2x"
+        android:background="@color/shimmerColor"
+        android:textColor="@color/colorBlack"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@id/tv_submit_date" />
+
+    <View
+        android:id="@+id/vw_change_plan"
+        android:layout_width="0dp"
+        android:layout_height="@dimen/margin_half"
+        android:layout_marginTop="@dimen/margin_2x"
+        android:background="@color/colorGray"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tv_reply_message" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

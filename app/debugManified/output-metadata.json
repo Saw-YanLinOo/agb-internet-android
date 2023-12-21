@@ -1,0 +1,20 @@
+{
+  "version": 3,
+  "artifactType": {
+    "type": "APK",
+    "kind": "Directory"
+  },
+  "applicationId": "com.agb.billing.customer",
+  "variantName": "debugManified",
+  "elements": [
+    {
+      "type": "SINGLE",
+      "filters": [],
+      "attributes": [],
+      "versionCode": 5,
+      "versionName": "1.4",
+      "outputFile": "AGB Internet_170523_1200_debugManified_1.4.apk"
+    }
+  ],
+  "elementType": "File"
+}

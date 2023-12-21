@@ -1,0 +1,189 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorBackground_1x"
+    android:focusable="true"
+    android:focusableInTouchMode="true">
+
+    <View
+        android:id="@+id/vw_background1"
+        android:layout_width="0dp"
+        android:layout_height="@dimen/header_bg_size"
+        android:background="@color/colorPrimary"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/iv_logo"
+        android:layout_width="wrap_content"
+        android:layout_height="?attr/actionBarSize"
+        android:src="@drawable/logo_3"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/iv_back"
+        android:layout_width="wrap_content"
+        android:layout_height="0dp"
+        android:paddingStart="@dimen/margin_4x"
+        android:paddingEnd="@dimen/margin_3x"
+        android:src="@drawable/ic_back_arrow"
+        app:layout_constraintBottom_toBottomOf="@id/iv_logo"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@id/iv_logo" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.235" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/ly_main"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:visibility="visible"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/iv_logo">
+
+
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/ly_receipt_filter"
+            android:layout_width="@dimen/size_45"
+            android:layout_height="@dimen/size_45"
+            android:orientation="horizontal"
+            android:background="?attr/selectableItemBackground"
+            android:layout_marginTop="@dimen/margin_3x"
+            android:layout_marginEnd="@dimen/margin_3x"
+            android:gravity="center"
+            app:cardCornerRadius="@dimen/margin_1x"
+            app:cardElevation="0dp"
+            android:elevation="0dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            >
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/iv_filter"
+                android:layout_width="@dimen/size_20"
+                android:layout_height="@dimen/size_20"
+                android:layout_gravity="center"
+                android:src="@drawable/ic_invoice_filter"
+                />
+
+        </com.google.android.material.card.MaterialCardView>
+
+        <androidx.appcompat.widget.AppCompatEditText
+            android:id="@+id/et_search_receipt"
+            style="@style/CustomFont"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginStart="@dimen/margin_3x"
+            android:layout_marginEnd="@dimen/margin_2x"
+            android:background="@drawable/bg_et_search"
+            android:hint="@string/hint_search_receipts"
+            android:inputType="text"
+            android:paddingStart="@dimen/margin_3x"
+            android:paddingEnd="@dimen/margin_3x"
+            android:textSize="@dimen/text_normal"
+            app:layout_constraintBottom_toBottomOf="@id/ly_receipt_filter"
+            app:layout_constraintEnd_toStartOf="@id/ly_receipt_filter"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@id/ly_receipt_filter" />
+
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/cv_receipt"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_margin="@dimen/margin_3x"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/et_search_receipt">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <View
+                    android:id="@+id/vw_title"
+                    android:layout_width="0dp"
+                    android:layout_height="@dimen/margin_half"
+                    android:layout_marginStart="@dimen/margin_2"
+                    android:layout_marginTop="@dimen/margin_2x"
+                    android:layout_marginEnd="@dimen/margin_2"
+                    android:background="@color/colorGray"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/lbl_receipt" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/lbl_receipt"
+                    style="@style/CustomFont_Title_Black"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/margin_3x"
+                    android:text="@string/title_receipts"
+                    android:textStyle="bold"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+                    android:id="@+id/swipe_refresh_layout"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/vw_title">
+
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:id="@+id/rv_receipt"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent" />
+
+                </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </com.google.android.material.card.MaterialCardView>
+
+        <com.facebook.shimmer.ShimmerFrameLayout
+            android:id="@+id/shimmer_loading"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:visibility="gone"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/et_search_receipt">
+
+            <include layout="@layout/view_shimmer_receipt" />
+
+        </com.facebook.shimmer.ShimmerFrameLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+
+
+    <include
+        android:id="@+id/ly_error"
+        layout="@layout/layout_error"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/guideline4" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

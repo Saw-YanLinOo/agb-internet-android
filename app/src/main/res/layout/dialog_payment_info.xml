@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="@dimen/margin_6x"
+    app:cardCornerRadius="@dimen/margin_2x"
+    app:cardElevation="@dimen/margin_4x"
+    app:cardUseCompatPadding="true">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="@dimen/margin_3x">
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tv_payment_info"
+            style="@style/CustomFont_Title_Black"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginStart="@dimen/margin_2x"
+            android:layout_marginTop="@dimen/margin_4x"
+            android:layout_marginEnd="@dimen/margin_2x"
+            android:contentDescription="@string/app_name"
+            android:text="@string/title_payment_information"
+            android:textAlignment="center"
+            android:textColor="@color/colorBlack"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"/>
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tv_payment_info_desc"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            style="@style/CustomFont_Small_Gray"
+            android:layout_marginStart="@dimen/margin_2x"
+            android:layout_marginEnd="@dimen/margin_2x"
+            android:layout_marginTop="@dimen/margin_3x"
+            tools:text="@string/sample_box"
+            app:layout_constraintTop_toBottomOf="@id/tv_payment_info"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tv_okay"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            style="@style/CustomFont_Normal_Black"
+            android:textColor="@color/colorPrimary"
+            android:text="@string/str_okay"
+            android:textStyle="bold"
+            android:letterSpacing="0.2"
+            android:layout_marginTop="@dimen/margin_2x"
+            android:layout_marginEnd="@dimen/margin_2x"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tv_payment_info_desc"
+            />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.cardview.widget.CardView>

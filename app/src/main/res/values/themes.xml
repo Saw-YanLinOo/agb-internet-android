@@ -1,0 +1,187 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <!-- Base application theme. -->
+    <style name="Theme.AGBBilling" parent="Theme.MaterialComponents.Light.NoActionBar">
+        <!-- Primary brand color. -->
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryVariant">@color/colorPrimary</item>
+        <item name="colorOnPrimary">@color/white</item>
+        <!-- Secondary brand color. -->
+        <item name="colorSecondary">@color/colorPrimary</item>
+        <item name="colorSecondaryVariant">@color/colorPrimary</item>
+        <item name="colorOnSecondary">@color/black</item>
+        <!-- Status bar color. -->
+<!--        <item name="android:statusBarColor" tools:targetApi="l">?attr/colorPrimaryVariant</item>-->
+        <item name="android:statusBarColor" tools:targetApi="l">@color/colorPrimaryDark</item>
+        <!-- Customize your theme here. -->
+<!--        <item name="android:windowAnimationStyle">@style/TransactionTheme</item>-->
+    </style>
+
+    <style name="Theme.AGBBilling.NoActionBar">
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+    </style>
+
+    <style name="Theme.AGBBilling.AppBarOverlay" parent="ThemeOverlay.MaterialComponents.Dark.ActionBar" />
+
+    <style name="Theme.AGBBilling.PopupOverlay" parent="ThemeOverlay.MaterialComponents.Light" />
+
+    <style name="TransactionTheme">
+        <item name="android:windowEnterAnimation">@anim/left_in</item>
+        <item name="android:windowExitAnimation">@anim/right_out</item>
+    </style>
+
+    <style name="Button_font_theme" parent="Widget.MaterialComponents.Button">
+        <item name="android:fontFamily">@font/pyidaungsu</item>
+    </style>
+
+    <style name="Button_font_theme_unelevated" parent="Widget.MaterialComponents.Button.UnelevatedButton">
+        <item name="android:fontFamily">@font/pyidaungsu</item>
+        <item name="android:elevation">0dp</item>
+    </style>
+
+    <style name="CustomTextAppearanceTab" parent="TextAppearance.Design.Tab">
+        <item name="textAllCaps">false</item>
+        <item name="android:textAllCaps">false</item>
+        <item name="android:textSize">@dimen/text_normal</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:fontFamily">@font/pyidaungsu</item>
+    </style>
+
+    <style name="dialogSpinner" parent="Widget.AppCompat.Light.DropDownItem.Spinner">
+        <item name="android:paddingStart">0dp</item>
+        <item name="android:paddingEnd">0dp</item>
+        <item name="fontFamily">@font/opensans</item>
+        <item name="android:fontFamily">@font/opensans</item>
+        <item name="android:textColor">@color/colorGray</item>
+        <item name="android:textSize">@dimen/text_small</item>
+    </style>
+
+    <style name="Widget.Design.TextInputLayout" parent="Theme.AGBBilling">
+        <item name="hintTextAppearance">@style/AppTheme.TextFloatLabelAppearance</item>
+        <item name="errorTextAppearance">@style/AppTheme.TextErrorAppearance</item>
+        <item name="counterTextAppearance">@style/TextAppearance.Design.Counter</item>
+        <item name="counterOverflowTextAppearance">@style/TextAppearance.Design.Counter.Overflow</item>
+    </style>
+
+    <style name="AppTheme.TextFloatLabelAppearance" parent="TextAppearance.Design.Hint">
+        <!-- Floating label appearance here -->
+        <item name="android:textColor">@color/colorPrimary</item>
+        <item name="android:textSize">20sp</item>
+    </style>
+
+    <style name="AppTheme.TextErrorAppearance" parent="TextAppearance.Design.Error">
+        <!-- Error message appearance here -->
+        <item name="android:textColor">@color/colorSecondary</item>
+        <item name="android:textSize">20sp</item>
+    </style>
+
+    <style name="MyAlertDialogStyle" parent="Theme.AppCompat.Light.Dialog.Alert">
+        <item name="colorAccent">@color/colorPrimary</item>
+        <item name="android:textColorPrimary">@color/colorBlack</item>
+        <item name="android:background">#FFFFFF</item>
+        <item name="buttonBarButtonStyle">@style/MyDialogButtonStyle</item>
+        <item name="dialogCornerRadius">@dimen/margin_2x</item>
+    </style>
+
+    <style name="MyDialogButtonStyle" parent="Widget.MaterialComponents.Button.TextButton">
+        <item name="backgroundTint">@color/colorPrimary</item>
+        <item name="android:textColor">@color/colorWhite</item>
+    </style>
+
+    <style name="CustomFont">
+        <item name="android:fontFamily">@font/pyidaungsu</item>
+        <item name="fontFamily">@font/pyidaungsu</item>
+    </style>
+
+    <style name="CustomFont_other">
+        <item name="android:fontFamily">@font/opensans</item>
+        <item name="fontFamily">@font/opensans</item>
+    </style>
+
+    <style name="CustomBottomNavigationView" parent="Widget.MaterialComponents.BottomNavigationView">
+        <item name="android:fontFamily">@font/pyidaungsu</item>
+        <item name="fontFamily">@font/pyidaungsu</item>
+    </style>
+
+    //custom style
+    <style name="CustomFont_Title_Black">
+        <item name="android:fontFamily">@font/pyidaungsu</item>
+        <item name="fontFamily">@font/pyidaungsu</item>
+        <item name="android:textSize">@dimen/text_title</item>
+        <item name="android:textColor">@color/colorBlack</item>
+    </style>
+
+    <style name="CustomFont_SubTitle_Black">
+        <item name="android:fontFamily">@font/pyidaungsu</item>
+        <item name="fontFamily">@font/pyidaungsu</item>
+        <item name="android:textSize">@dimen/text_subtitle</item>
+        <item name="android:textColor">@color/colorBlack</item>
+    </style>
+
+
+
+    <style name="CustomFont_Normal_Black">
+        <item name="android:fontFamily">@font/pyidaungsu</item>
+        <item name="fontFamily">@font/pyidaungsu</item>
+        <item name="android:textSize">@dimen/text_normal</item>
+        <item name="android:textColor">@color/colorBlack</item>
+    </style>
+
+    <style name="CustomFont_Small_Black">
+        <item name="android:fontFamily">@font/pyidaungsu</item>
+        <item name="fontFamily">@font/pyidaungsu</item>
+        <item name="android:textSize">@dimen/text_small</item>
+        <item name="android:textColor">@color/colorBlack</item>
+    </style>
+
+    <style name="CustomFont_Title_White">
+        <item name="android:fontFamily">@font/pyidaungsu</item>
+        <item name="fontFamily">@font/pyidaungsu</item>
+        <item name="android:textSize">@dimen/text_title</item>
+        <item name="android:textColor">@color/colorWhite</item>
+    </style>
+    <style name="CustomFont_SubTitle_White">
+        <item name="android:fontFamily">@font/pyidaungsu</item>
+        <item name="fontFamily">@font/pyidaungsu</item>
+        <item name="android:textSize">@dimen/text_subtitle</item>
+        <item name="android:textColor">@color/colorWhite</item>
+    </style>
+    <style name="CustomFont_Normal_White">
+        <item name="android:fontFamily">@font/pyidaungsu</item>
+        <item name="fontFamily">@font/pyidaungsu</item>
+        <item name="android:textSize">@dimen/text_normal</item>
+        <item name="android:textColor">@color/colorWhite</item>
+    </style>
+    <style name="CustomFont_Small_White">
+        <item name="android:fontFamily">@font/pyidaungsu</item>
+        <item name="fontFamily">@font/pyidaungsu</item>
+        <item name="android:textSize">@dimen/text_small</item>
+        <item name="android:textColor">@color/colorWhite</item>
+    </style>
+
+
+    <style name="CustomFont_Title_Gray">
+        <item name="android:fontFamily">@font/pyidaungsu</item>
+        <item name="fontFamily">@font/pyidaungsu</item>
+        <item name="android:textSize">@dimen/text_title</item>
+        <item name="android:textColor">@color/colorGray</item>
+    </style>
+    <style name="CustomFont_SubTitle_Gray">
+        <item name="android:fontFamily">@font/pyidaungsu</item>
+        <item name="fontFamily">@font/pyidaungsu</item>
+        <item name="android:textSize">@dimen/text_subtitle</item>
+        <item name="android:textColor">@color/colorGray</item>
+    </style>
+    <style name="CustomFont_Normal_Gray">
+        <item name="android:fontFamily">@font/pyidaungsu</item>
+        <item name="fontFamily">@font/pyidaungsu</item>
+        <item name="android:textSize">@dimen/text_normal</item>
+        <item name="android:textColor">@color/colorGray</item>
+    </style>
+    <style name="CustomFont_Small_Gray">
+        <item name="android:fontFamily">@font/pyidaungsu</item>
+        <item name="fontFamily">@font/pyidaungsu</item>
+        <item name="android:textSize">@dimen/text_small</item>
+        <item name="android:textColor">@color/colorGray</item>
+    </style>
+</resources>

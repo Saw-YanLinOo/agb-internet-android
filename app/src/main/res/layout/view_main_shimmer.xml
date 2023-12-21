@@ -1,0 +1,277 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@android:color/transparent"
+    android:orientation="vertical"
+    tools:context=".activities.MainActivity">
+
+    <RelativeLayout
+        android:id="@+id/layout_what_new"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/margin_3x"
+        android:paddingBottom="@dimen/margin_3x"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/cv_service">
+
+        <View
+            android:id="@+id/vp_banner"
+            android:layout_width="match_parent"
+            android:layout_height="150dp"
+            android:background="@color/shimmerColor" />
+
+    </RelativeLayout>
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.235" />
+
+
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/cv_quick_pay"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/margin_3x"
+        android:layout_marginTop="@dimen/margin_2x"
+        android:layout_marginEnd="@dimen/margin_3x"
+        app:cardCornerRadius="@dimen/margin_1x"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <View
+                android:id="@+id/vw_title"
+                android:layout_width="0dp"
+                android:layout_height="@dimen/margin_half"
+                android:layout_marginStart="@dimen/margin_2"
+                android:layout_marginTop="@dimen/margin_3x"
+                android:layout_marginEnd="@dimen/margin_2"
+                android:background="@color/shimmerColor"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/lbl_title" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/lbl_title"
+                style="@style/CustomFont_Title_Black"
+                android:layout_width="@dimen/size_105"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/margin_3x"
+                android:textStyle="bold"
+                android:background="@color/shimmerColor"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tv_invoice_error"
+                style="@style/CustomFont"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/margin_3x"
+                android:layout_marginTop="@dimen/margin_2x"
+                android:text="@string/str_invoice_not_found"
+                android:textColor="@color/colorSecondary"
+                android:textSize="@dimen/text_extra_small"
+                android:visibility="gone"
+                app:layout_constraintStart_toStartOf="@id/ly_invoice_no"
+                app:layout_constraintTop_toBottomOf="@id/ly_invoice_no" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btn_pay"
+                style="@style/Button_font_theme"
+                android:layout_width="0dp"
+                android:layout_height="@dimen/size_40"
+                android:layout_marginStart="@dimen/margin_1x"
+                android:layout_marginTop="@dimen/margin_3x"
+                android:layout_marginEnd="@dimen/margin_1x"
+                android:layout_marginBottom="@dimen/margin_3x"
+                android:insetLeft="0dp"
+                android:insetTop="0dp"
+                android:insetRight="0dp"
+                android:insetBottom="0dp"
+                android:minHeight="0dp"
+                android:textAllCaps="false"
+                android:textSize="@dimen/text_normal"
+                app:backgroundTint="@color/shimmerColor"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tv_invoice_error" />
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/ly_invoice_no"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                android:layout_width="0dp"
+                android:layout_height="@dimen/size_60"
+                android:layout_marginStart="@dimen/margin_1x"
+                android:layout_marginTop="@dimen/margin_2x"
+                android:layout_marginEnd="@dimen/margin_1x"
+                app:errorTextColor="@color/colorSecondary"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/vw_title">
+
+                <androidx.appcompat.widget.AppCompatAutoCompleteTextView
+                    android:id="@+id/et_invoice_no"
+                    style="@style/CustomFont_Normal_Black"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@color/shimmerColor"
+                    android:completionThreshold="1"
+                    android:inputType="text"
+                    android:paddingStart="@dimen/margin_3x"
+                    android:paddingEnd="@dimen/margin_3x"
+                    android:textColorHint="@color/colorBlack" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </com.google.android.material.card.MaterialCardView>
+
+
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/cv_service"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/margin_3x"
+        android:layout_marginTop="@dimen/margin_3x"
+        android:layout_marginEnd="@dimen/margin_3x"
+        app:cardCornerRadius="@dimen/margin_1x"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/cv_quick_pay">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/colorWhite">
+
+            <LinearLayout
+                android:id="@+id/layout_1"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin_1x"
+                android:layout_marginBottom="@dimen/margin_2x"
+                android:orientation="horizontal"
+                android:weightSum="4"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/vw_service">
+
+                <include
+                    android:id="@+id/item1"
+                    layout="@layout/view_shimmer_item_category"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1" />
+
+                <include
+                    android:id="@+id/item2"
+                    layout="@layout/view_shimmer_item_category"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1" />
+
+                <include
+                    android:id="@+id/item3"
+                    layout="@layout/view_shimmer_item_category"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1" />
+
+                <include
+                    android:id="@+id/item4"
+                    layout="@layout/view_shimmer_item_category"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1" />
+
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/layout_2"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin_1x"
+                android:layout_marginBottom="@dimen/margin_2x"
+                android:orientation="horizontal"
+                android:weightSum="4"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/layout_1">
+
+                <include
+                    android:id="@+id/item1_1"
+                    layout="@layout/view_shimmer_item_category"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1" />
+
+                <include
+                    android:id="@+id/item2_2"
+                    layout="@layout/view_shimmer_item_category"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1" />
+
+                <include
+                    android:id="@+id/item3_3"
+                    layout="@layout/view_shimmer_item_category"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1" />
+
+                <include
+                    android:id="@+id/item4_4"
+                    layout="@layout/view_shimmer_item_category"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1" />
+
+
+            </LinearLayout>
+
+            <View
+                android:id="@+id/vw_service"
+                android:layout_width="0dp"
+                android:layout_height="@dimen/margin_half"
+                android:layout_marginStart="@dimen/margin_2"
+                android:layout_marginTop="@dimen/margin_3x"
+                android:layout_marginEnd="@dimen/margin_2"
+                android:background="@color/colorGray"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/lbl_service" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/lbl_service"
+                style="@style/CustomFont_Title_Black"
+                android:layout_width="@dimen/size_105"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/margin_3x"
+                android:background="@color/shimmerColor"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </com.google.android.material.card.MaterialCardView>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,298 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:focusable="true"
+    android:focusableInTouchMode="true">
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/ly_main"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/cv_submit"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/margin_3x"
+            android:layout_marginTop="@dimen/margin_3x"
+            android:layout_marginEnd="@dimen/margin_3x"
+            app:cardCornerRadius="@dimen/margin_1x"
+            android:visibility="visible"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/margin_6x"
+                android:background="@color/colorWhite">
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/lbl_title"
+                    style="@style/CustomFont_Title_Black"
+                    android:layout_width="@dimen/size_200"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/margin_3x"
+                    android:background="@color/shimmerColor"
+                    android:textStyle="bold"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <View
+                    android:id="@+id/vw_title"
+                    android:layout_width="0dp"
+                    android:layout_height="@dimen/margin_half"
+                    android:layout_marginStart="@dimen/margin_2"
+                    android:layout_marginTop="@dimen/margin_3x"
+                    android:layout_marginEnd="@dimen/margin_2"
+                    android:background="@color/colorGray"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/lbl_title" />
+
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/lbl_active_plan"
+                    style="@style/CustomFont_Normal_Black"
+                    android:layout_width="@dimen/size_200"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="@dimen/margin_2x"
+                    android:layout_marginTop="@dimen/margin_2x"
+                    android:background="@color/shimmerColor"
+                    android:drawablePadding="@dimen/margin_2x_2plus"
+                    android:textStyle="bold"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/vw_title" />
+
+
+                <RelativeLayout
+                    android:id="@+id/ly_active_plan"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="@dimen/margin_2x"
+                    android:layout_marginTop="@dimen/margin_1x"
+                    android:layout_marginBottom="@dimen/margin_5x"
+                    android:orientation="horizontal"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/lbl_active_plan">
+
+
+                    <androidx.appcompat.widget.AppCompatSpinner
+                        android:id="@+id/spnActivePlan"
+                        android:layout_width="match_parent"
+                        android:layout_height="40dp"
+                        android:background="@color/shimmerColor"
+                        android:padding="@dimen/margin_2x" />
+
+                </RelativeLayout>
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/lbl_category"
+                    style="@style/CustomFont_Normal_Black"
+                    android:layout_width="@dimen/size_150"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="@dimen/margin_2x"
+                    android:layout_marginTop="@dimen/margin_2x"
+                    android:background="@color/shimmerColor"
+                    android:drawablePadding="@dimen/margin_2x_2plus"
+                    android:textColor="@color/colorBlack_1x"
+                    android:textStyle="bold"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/ly_active_plan" />
+
+
+                <RelativeLayout
+                    android:id="@+id/ly_category"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="@dimen/margin_2x"
+                    android:layout_marginTop="@dimen/margin_1x"
+                    android:layout_marginBottom="@dimen/margin_5x"
+                    android:background="@drawable/bg_text_profile"
+                    android:orientation="horizontal"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/lbl_category">
+
+
+                    <androidx.appcompat.widget.AppCompatSpinner
+                        android:id="@+id/spnCategory"
+                        android:layout_width="match_parent"
+                        android:layout_height="40dp"
+                        android:background="@color/shimmerColor"
+                        android:padding="@dimen/margin_2x" />
+
+                </RelativeLayout>
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/lbl_message"
+                    style="@style/CustomFont_Normal_Black"
+                    android:layout_width="@dimen/size_150"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="@dimen/margin_2x"
+                    android:layout_marginTop="@dimen/margin_2x"
+                    android:background="@color/shimmerColor"
+                    android:drawablePadding="@dimen/margin_2x_2plus"
+                    android:textStyle="bold"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/ly_category" />
+
+
+                <androidx.appcompat.widget.AppCompatEditText
+                    android:id="@+id/et_message"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="@dimen/margin_2x"
+                    android:layout_marginTop="@dimen/margin_1x"
+                    android:background="@color/shimmerColor"
+                    android:gravity="top"
+                    android:imeOptions="actionNext"
+                    android:lines="4"
+                    android:paddingStart="@dimen/margin_2x"
+                    android:paddingTop="@dimen/margin_1x"
+                    android:scrollbars="none"
+                    android:textColor="@color/colorGray"
+                    android:textCursorDrawable="@null"
+                    android:textSize="@dimen/text_normal"
+                    android:textStyle="normal"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/lbl_message" />
+
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/lbl_image"
+                    style="@style/CustomFont_Normal_Black"
+                    android:layout_width="@dimen/size_150"
+                    android:layout_height="wrap_content"
+                    android:background="@color/shimmerColor"
+                    android:layout_marginStart="@dimen/margin_2x"
+                    android:layout_marginTop="@dimen/margin_2x"
+                    android:drawablePadding="@dimen/margin_2x_2plus"
+                    android:textColor="@color/colorBlack_1x"
+                    android:textStyle="bold"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/et_message" />
+
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/constraint_upload"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/margin_3x"
+                    android:background="@drawable/bg_round_dot_shimmer"
+                    android:orientation="horizontal"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/lbl_image">
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/lblUploadPhoto"
+                        style="@style/CustomFont_Normal_Black"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/margin_2x"
+                        android:drawableTop="@drawable/ic_image_upload_shimmer"
+                        android:drawablePadding="@dimen/margin_2x_2plus"
+                        android:text="@string/lbl_upload_photo_here"
+                        android:textAlignment="center"
+                        android:textColor="@color/shimmerColor"
+                        android:textStyle="bold"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/lblUploadPhoto">
+
+
+                        <com.google.android.material.button.MaterialButton
+                            android:id="@+id/btnOpenGallery"
+                            style="@style/Button_font_theme"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/margin_3x"
+                            android:layout_marginBottom="@dimen/margin_4x"
+                            android:text="@string/lbl_open_gallery"
+                            android:textAllCaps="false"
+                            android:textSize="@dimen/text_normal"
+                            android:textStyle="bold"
+                            app:backgroundTint="@color/shimmerColor"
+                            app:cornerRadius="@dimen/margin_1x"
+                            app:icon="@drawable/ic_gallery"
+                            app:iconGravity="textStart" />
+
+                        <com.google.android.material.button.MaterialButton
+                            android:id="@+id/btnOpenCamera"
+                            style="@style/Button_font_theme"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="@dimen/margin_3x"
+                            android:layout_marginTop="@dimen/margin_3x"
+                            android:layout_marginBottom="@dimen/margin_3x"
+                            android:layout_toEndOf="@+id/btnOpenGallery"
+                            android:text="@string/lbl_open_camera"
+                            android:textAllCaps="false"
+                            android:textSize="@dimen/text_normal"
+                            android:textStyle="bold"
+                            app:backgroundTint="@color/shimmerColor"
+                            app:cornerRadius="@dimen/margin_1x"
+                            app:icon="@drawable/ic_camera"
+                            app:iconGravity="textStart" />
+
+
+                    </RelativeLayout>
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/tv_dialog_cancel"
+                    style="@style/CustomFont_Normal_Black"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/size_30"
+                    android:layout_marginEnd="@dimen/margin_6x"
+                    android:background="@color/shimmerColor"
+                    android:letterSpacing="0.2"
+                    android:text="@string/submit_complain_cancel"
+                    android:textColor="@color/shimmerColor"
+                    android:textStyle="bold"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/constraint_upload" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/tv_submit"
+                    style="@style/CustomFont_Normal_Black"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="@dimen/margin_6x"
+                    android:background="@color/shimmerColor"
+                    android:letterSpacing="0.2"
+                    android:text="@string/submit_complaint"
+                    android:textColor="@color/shimmerColor"
+                    android:textStyle="bold"
+                    app:layout_constraintEnd_toStartOf="@id/tv_dialog_cancel"
+                    app:layout_constraintTop_toTopOf="@id/tv_dialog_cancel" />
+
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </com.google.android.material.card.MaterialCardView>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

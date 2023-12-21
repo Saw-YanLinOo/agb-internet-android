@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="@dimen/margin_1x"
+    app:cardCornerRadius="@dimen/margin_2x"
+    app:cardElevation="@dimen/margin_4x"
+    app:cardUseCompatPadding="true">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="@dimen/margin_2x">
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tv_choose_payment"
+            style="@style/CustomFont_Title_Black"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginHorizontal="@dimen/margin_2x"
+            android:layout_marginTop="@dimen/margin_3x"
+            android:contentDescription="@string/app_name"
+            android:text="@string/title_choose_payment"
+            android:textAlignment="center"
+            android:textColor="@color/colorBlack"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rv_payment"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_marginHorizontal="@dimen/margin_2x"
+            android:layout_marginTop="@dimen/margin_3x"
+            android:clipToPadding="false"
+            android:visibility="visible"
+            tools:visibility="visible"
+            app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tv_choose_payment"
+            app:spanCount="3"
+            tools:listitem="@layout/item_payment_view_holder" />
+
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/ly_phone_number"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/size_50"
+            android:layout_marginStart="@dimen/margin_1x"
+            android:layout_marginTop="@dimen/margin_3x"
+            android:layout_marginEnd="@dimen/margin_1x"
+            android:visibility="gone"
+            tools:visibility="visible"
+            app:errorTextColor="@color/colorPrimary"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/rv_payment">
+
+            <androidx.appcompat.widget.AppCompatAutoCompleteTextView
+                android:id="@+id/et_phone_no"
+                style="@style/CustomFont_Normal_Black"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@null"
+                android:completionThreshold="1"
+                android:hint="@string/lbl_aya_account_phone"
+                android:inputType="number"
+                android:paddingTop="@dimen/margin_1x"
+                android:paddingStart="@dimen/margin_3x"
+                android:paddingEnd="@dimen/margin_3x"
+                android:textColorHint="@color/colorBlack" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btn_pay_now"
+            style="@style/Button_font_theme"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="@dimen/margin_2x"
+            android:layout_marginTop="@dimen/margin_4x"
+            android:layout_marginBottom="@dimen/margin_3x"
+            android:text="@string/str_pay_now"
+            android:visibility="visible"
+            android:textAllCaps="false"
+            android:textSize="@dimen/text_normal"
+            android:textStyle="bold"
+            app:backgroundTint="@color/colorPrimaryDark"
+            app:cornerRadius="@dimen/margin_1x"
+            app:icon="@drawable/ic_pay_now"
+            app:iconGravity="textStart"
+            tools:visibility="visible"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/ly_phone_number"
+            app:layout_constraintVertical_bias="0.0" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.cardview.widget.CardView>

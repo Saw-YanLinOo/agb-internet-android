@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="@dimen/margin_1x"
+    android:orientation="horizontal">
+
+    <TextView
+        android:id="@+id/text"
+        style="?attr/spinnerDropDownItemStyle"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/dropdownListPreferredItemHeight"
+        android:ellipsize="marquee"
+        android:paddingStart="@dimen/margin_2x"
+        android:singleLine="true"
+        android:text="Progress"
+        android:textColor="@android:color/black"
+        android:textSize="@dimen/text_normal" />
+
+</LinearLayout>

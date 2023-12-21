@@ -1,0 +1,128 @@
+<resources>
+    <string name="app_name">AGB Internet</string>
+    <string name="lbl_username">အသုံးပြုသူအမည်</string>
+    <string name="lbl_password">စကားဝှက်</string>
+    <string name="str_login">အကောင့်ဝင်ရန်</string>
+    <string name="lbl_quick_pay">Quick Pay</string>
+    <string name="str_invoice_not_found">Invoice not Found!</string>
+    <string name="lbl_services">ဝန်ဆောင်မှုများ</string>
+
+    <string name="title_my_plans">My Plans</string>
+    <string name="title_invoices">ငွေတောင်းခံလွှာများ</string>
+    <string name="title_receipts">ပြေစာများ</string>
+    <string name="title_profile">ကိုယ်ရေးအချက်အလက်</string>
+    <string name="title_t_c">T &amp; C</string>
+    <string name="title_contact">ဆက်သွယ်ရန်</string>
+    <string name="title_support">အကူအညီ</string>
+    <string name="title_language">ဘာသာစကား</string>
+    <string name="title_logout">ထွက်မည်</string>
+    <string name="str_pay">ပေးချေရန်</string>
+    <string name="lbl_active_plans">အသုံးပြုနေသော Planများ</string>
+    <string name="title_active_plans">အသုံးပြုနေသော Planများ</string>
+    <string name="title_pending_plans">လျှောက်ထားဆဲ Planများ</string>
+    <string name="lbl_pending_plans">လျှောက်ထားဆဲ Planများ</string>
+    <string name="str_change_plan">ပြောင်းရန်</string>
+    <string name="str_undo_changes">ရပ်ဆိုင်းရန်</string>
+    <string name="lbl_till">Till :\u0020</string>
+    <string name="str_confirmation">အတည်ပြုခြင်း</string>
+    <string name="desc_do_you_want_to_sure">သင်လုပ်ရန်သေချာပါသလား?</string>
+    <string name="str_ok">အိုကေ</string>
+    <string name="str_cancel">မပြုလုပ်ပါ</string>
+    <string name="lbl_bandwidth">Bandwidth</string>
+    <string name="lbl_pay_per">Pay Per</string>
+    <string name="lbl_amount">ကျသင့်ငွေ</string>
+    <string name="dialog_change_plan_desc">This plan will become active from 12 Desc 2021</string>
+    <string name="hint_search_invoices">ငွေတောင်းခံလွှာများကိုရှာဖွေပါ...</string>
+    <string name="str_unpaid">Unpaid</string>
+    <string name="lbl_due">သတ်မှတ်ရက်ချိန်း :\u0020</string>
+    <string name="lbl_invoice_id">ငွေတောင်းခံလွှာနံပါတ်</string>
+    <string name="lbl_service_id">Service ID</string>
+    <string name="lbl_due_date">သတ်မှတ်ရက်ချိန်း</string>
+    <string name="lbl_dot_dot">\u0020:\u0020</string>
+    <string name="str_description">ဖော်ပြချက်</string>
+    <string name="lbl_total">စုစုပေါင်း :\u0020</string>
+    <string name="lbl_payment_information"><u>ငွေပေးချေမှုအချက်အလက်</u></string>
+    <string name="title_payment_information">ငွေပေးချေမှုအချက်အလက်</string>
+    <string name="str_pay_now">ပေးချေရန်</string>
+    <string name="str_download">သိမ်းဆည်းရန်</string>
+    <string name="hint_search_receipts">ပြေစာများကိုရှာဖွေပါ...</string>
+    <string name="lbl_paid">Paid :\u0020</string>
+    <string name="lbl_receipt">ပြေစာများ</string>
+    <string name="lbl_receipt_id">ပြေစာ ID</string>
+    <string name="lbl_transaction_id">Transaction ID</string>
+    <string name="lbl_payment_type">ငွေပေးချေမှုအမျိုးအစား</string>
+    <string name="lbl_paid_date">ပေးချေခဲ့သည့်ရက်</string>
+    <string name="title_choose_payment">ငွေပေးချေမှု့ကိုရွေးချယ်ပါ။</string>
+    <string name="str_kbz_pay">KBZPay</string>
+    <string name="str_aya_pay">AYA Pay</string>
+    <string name="sample_box">1. Customer shall make payment of Grand Total before due date.\n2. If Grand Total is not paid before due date, connection may be temporarily disabled.\n3. You can Paid By Bank.</string>
+    <string name="str_okay">အိုကေ</string>
+    <string name="str_cancel_cap">မပြုလုပ်ပါ</string>
+    <string name="lbl_terms_conditions">စည်းကမ်းသတ်မှတ်ချက်များ</string>
+    <string name="lbl_mail">မေးလ်</string>
+    <string name="lbl_phone">ဖုန်းနံပါတ်</string>
+    <string name="lbl_address">လိပ်စာ</string>
+    <string name="str_myanmar">မြန်မာ (ယူနီကုဒ်)</string>
+    <string name="lbl_english">အင်္ဂလိပ်</string>
+    <string name="str_are_you_sure_you_want_to_log_out">အကောင့်မှထွက်ရန်သေချာပါသလား?</string>
+    <string name="str_confirm">အတည်ပြုရန်</string>
+    <string name="lbl_new_password">စကားဝှက် အသစ်</string>
+    <string name="lbl_confirm_password">အတည်ပြု စကားဝှက်</string>
+    <string name="error_wifi">ဆာဗာသို့ ချိတ်ဆက်၍မရပါ။</string>
+    <string name="error_service">သင့်တွင် လျှောက်ထားဆဲဝန်ဆောင်မှုမရှိပါ။</string>
+    <string name="error_receipt">ပြေစာမရရှိသေးပါ။</string>
+    <string name="error_invoice">ငွေတောင်းခံလွှာမရရှိသေးပါ။</string>
+    <string name="error_subscribe">သင့်တွင် မည်သည့်ဝန်ဆောင်မှုများကိုမျှ\nစာရင်းသွင်းထားခြင်းမရှိပါ။</string>
+    <string name="invalid_session">Invalid Session</string>
+    <string name="str_retry">Retry</string>
+    <string name="lbl_invoice_number">ငွေတောင်းခံလွှာနံပါတ်</string>
+    <string name="lbl_change_password">စကားဝှက်ကိုပြောင်းရန်</string>
+    <string name="str_change">ပြောင်းရန်</string>
+    <string name="str_agree">သဘောတူသည်</string>
+    <string name="str_disagree">သဘောမတူပါ</string>
+    <string name="lbl_balance">လက်ကျန်</string>
+    <string name="payment_general_desc">သင့်ငွေပေးချေမှု့ကိုလုပ်ဆောင်နေပါသည်။ ကျေးဇူးပြု၍ယခုစာမျက်နှာတွင်အခြေအနေကိုစစ်ဆေးပါ။</string>
+    <string name="str_info">အချက်အလက်</string>
+    <string name="lbl_viber_no">Viber နံပါတ်</string>
+    <string name="lbl_email">အီးမေးလ်</string>
+    <string name="lbl_activation_date">စတင်အသုံးပြုသည့်ရက်စွဲ</string>
+    <string name="lbl_membership_id">အသင်းဝင် ID</string>
+    <string name="str_save">ပြင်မည်</string>
+    <string name="str_edit">သိမ်းမည်</string>
+    <string name="lbl_alternative_phone">Alternative Phone</string>
+
+    <string name="str_logging_in">LOGGING IN</string>
+
+    <string-array name="arrayPlan">
+        <item>25Mbps</item>
+        <item>20Mbps</item>
+    </string-array>
+
+
+    <string name="lbl_active_plan">Active Plan</string>
+    <string name="lbl_active_category">အမျိုးအစား</string>
+    <string name="lbl_active_message">မက်ဆေ့ချ်</string>
+    <string name="lbl_image_upload">ပုံတင်ခြင်း</string>
+    <string name="lbl_upload_photo_here">ဓာတ်ပုံကို ဤနေရာတွင် တင်ပါ</string>
+    <string name="submit_complaint">တိုင်ကြားစာပေးပို့ရန်</string>
+    <string name="submit_complain_cancel">မပြုလုပ်ပါ</string>
+    <string name="lbl_open_gallery">ပြခန်းဖွင့်ပါ</string>
+    <string name="lbl_open_camera">ကင်မရာကိုဖွင့်ပါ</string>
+    <string name="lbl_submit_complaint">တိုင်ကြားစာပေးပို့ရန်</string>
+    <string name="lbl_complaint">တိုင်ကြားစာ</string>
+
+    <string name="error_complain">သင့်တွင် တိုင်ကြားစာမရှိပါ။</string>
+
+
+    <string name="lbl_ticket_number">Ticket Number</string>
+    <string name="lbl_ticket_status">Ticket Status</string>
+    <string name="lbl_reply_call_center">Reply</string>
+    <string name="lbl_new_version">New Version</string>
+    <string name="lbl_check_payment">တောင်းခံလွှာများ</string>
+    <string name="lbl_det">\u0020-\u0020</string>
+    <string name="lbl_invoice_amount">ငွေတောင်းခံလွှာကျသင့်ငွေ</string>
+    <string name="lbl_reference_no">Reference No</string>
+    <string name="title_payment_info">ငွေပေးချေမှုအချက်အလက်</string>
+    <string name="lbl_aya_account_phone">AYA Pay Account Phone Number</string>
+
+</resources>

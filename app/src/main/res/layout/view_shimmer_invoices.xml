@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:focusable="true"
+    android:focusableInTouchMode="true"
+    android:background="@android:color/transparent"
+    >
+
+    <LinearLayout
+        android:id="@+id/ly_filter"
+        android:layout_width="@dimen/size_45"
+        android:layout_height="@dimen/size_45"
+        android:orientation="horizontal"
+        android:background="@drawable/bg_filter"
+        android:layout_marginTop="@dimen/margin_3x"
+        android:layout_marginEnd="@dimen/margin_3x"
+        android:gravity="center"
+        android:visibility="gone"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        >
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/shimmerColor"
+            />
+
+    </LinearLayout>
+
+    <View
+        android:id="@+id/et_search_invoices"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        style="@style/CustomFont"
+        android:textSize="@dimen/text_normal"
+        android:paddingStart="@dimen/margin_3x"
+        android:paddingEnd="@dimen/margin_3x"
+        android:layout_marginStart="@dimen/margin_3x"
+        android:layout_marginEnd="@dimen/margin_2x"
+        android:hint="@string/hint_search_invoices"
+        android:inputType="text"
+        android:visibility="gone"
+        android:background="@color/shimmerColor"
+        app:layout_constraintTop_toTopOf="@id/ly_filter"
+        app:layout_constraintBottom_toBottomOf="@id/ly_filter"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/ly_filter"
+        />
+
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/cv_invoices"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_margin="@dimen/margin_3x"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/et_search_invoices"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:background="@color/colorWhite"
+            >
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/lbl_invoices"
+                android:layout_width="@dimen/size_105"
+                android:layout_height="wrap_content"
+                style="@style/CustomFont_Title_Black"
+                android:textStyle="bold"
+                android:background="@color/shimmerColor"
+                android:layout_margin="@dimen/margin_3x"
+                android:layout_gravity="center"
+                />
+
+            <View
+                android:id="@+id/vw_title"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/margin_half"
+                android:background="@color/colorGray"
+                android:layout_marginStart="@dimen/margin_2"
+                android:layout_marginEnd="@dimen/margin_2"
+                android:layout_marginTop="@dimen/margin_2x"
+                />
+
+            <include
+                layout="@layout/view_shimmer_item_invoice"/>
+            <include
+                layout="@layout/view_shimmer_item_invoice"/>
+            <include
+                layout="@layout/view_shimmer_item_invoice"/>
+            <include
+                layout="@layout/view_shimmer_item_invoice"/>
+
+        </LinearLayout>
+
+    </com.google.android.material.card.MaterialCardView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

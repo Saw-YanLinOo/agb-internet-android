@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@android:color/transparent"
+    android:focusable="true"
+    android:focusableInTouchMode="true">
+
+
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.235" />
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/ly_main"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:visibility="visible"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/cv_invoices"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_margin="@dimen/margin_3x"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@color/colorWhite">
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/lbl_invoices"
+                    style="@style/CustomFont_Title_Black"
+                    android:layout_width="@dimen/size_105"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/margin_3x"
+                    android:background="@color/shimmerColor"
+                    android:textStyle="bold"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <View
+                    android:id="@+id/vw_title"
+                    android:layout_width="0dp"
+                    android:layout_height="@dimen/margin_half"
+                    android:layout_marginStart="@dimen/margin_2"
+                    android:layout_marginTop="@dimen/margin_2x"
+                    android:layout_marginEnd="@dimen/margin_2"
+                    android:background="@color/shimmerColor"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/lbl_invoices" />
+
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btnSubmit"
+                    style="@style/Button_font_theme"
+                    android:layout_width="@dimen/size_150"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/margin_1x"
+                    android:textAllCaps="false"
+                    android:textSize="@dimen/text_normal"
+                    android:textStyle="bold"
+                    app:backgroundTint="@color/shimmerColor"
+                    app:cornerRadius="@dimen/margin_1x"
+                    app:iconGravity="textStart"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/vw_title" />
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/colorWhite"
+                    android:orientation="vertical"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/btnSubmit">
+
+                    <include layout="@layout/view_shimmer_item_complain_history" />
+
+                    <include layout="@layout/view_shimmer_item_complain_history" />
+
+                    <include layout="@layout/view_shimmer_item_complain_history" />
+
+                    <include layout="@layout/view_shimmer_item_complain_history" />
+
+                </LinearLayout>
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </com.google.android.material.card.MaterialCardView>
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

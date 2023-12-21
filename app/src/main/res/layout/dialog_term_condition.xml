@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="@dimen/margin_6x"
+    app:cardCornerRadius="@dimen/margin_2x"
+    app:cardElevation="@dimen/margin_4x"
+    app:cardUseCompatPadding="true">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="@dimen/margin_3x">
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/lbl_t_c"
+            style="@style/CustomFont_Title_Black"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginStart="@dimen/margin_2x"
+            android:layout_marginTop="@dimen/margin_4x"
+            android:layout_marginEnd="@dimen/margin_2x"
+            android:contentDescription="@string/app_name"
+            android:text="@string/lbl_terms_conditions"
+            android:textAlignment="center"
+            android:textColor="@color/colorBlack"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"/>
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tv_t_c_desc"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            style="@style/CustomFont_Small_Gray"
+            android:layout_marginStart="@dimen/margin_2x"
+            android:layout_marginEnd="@dimen/margin_2x"
+            android:layout_marginTop="@dimen/margin_3x"
+            tools:text="@string/sample_box"
+            app:layout_constraintTop_toBottomOf="@id/lbl_t_c"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btn_disagree"
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/size_25"
+            android:minWidth="0dp"
+            android:padding="0dp"
+            android:insetTop="0dp"
+            android:insetBottom="0dp"
+            android:insetLeft="0dp"
+            android:insetRight="0dp"
+            android:paddingStart="@dimen/margin_2x"
+            android:paddingEnd="@dimen/margin_2x"
+            android:paddingTop="@dimen/margin_1x"
+            android:layout_marginTop="@dimen/margin_2x"
+            style="@style/Button_font_theme_unelevated"
+            android:background="@color/colorWhite"
+            app:backgroundTint="@color/colorWhite"
+            android:text="@string/str_disagree"
+            android:textColor="@color/colorSecondary"
+            android:textAllCaps="false"
+            android:textSize="@dimen/text_small"
+            app:layout_constraintEnd_toEndOf="@id/tv_t_c_desc"
+            app:layout_constraintTop_toBottomOf="@id/tv_t_c_desc"
+            />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btn_agree"
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/size_25"
+            android:minWidth="0dp"
+            android:padding="0dp"
+            android:insetTop="0dp"
+            android:insetBottom="0dp"
+            android:insetLeft="0dp"
+            android:insetRight="0dp"
+            android:paddingStart="@dimen/margin_2x"
+            android:paddingEnd="@dimen/margin_2x"
+            android:paddingTop="@dimen/margin_1x"
+            android:layout_marginTop="@dimen/margin_2x"
+            android:layout_marginEnd="@dimen/margin_3x"
+            style="@style/Button_font_theme_unelevated"
+            android:background="@color/colorWhite"
+            app:backgroundTint="@color/colorWhite"
+            android:text="@string/str_agree"
+            android:textColor="@color/colorPrimary"
+            android:textAllCaps="false"
+            android:textSize="@dimen/text_small"
+            app:layout_constraintEnd_toStartOf="@id/btn_disagree"
+            app:layout_constraintTop_toBottomOf="@id/tv_t_c_desc"
+            />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.cardview.widget.CardView>

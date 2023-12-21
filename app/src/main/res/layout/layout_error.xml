@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:id="@+id/layout_error"
+    android:background="@color/colorBackground_1x"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guide_line"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.5"
+        />
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/iv_error"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/ic_component_wifi"
+        android:layout_marginBottom="@dimen/margin_1x_plus2"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/guide_line"
+        />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tv_error"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        style="@style/CustomFont_SubTitle_Black"
+        android:layout_marginEnd="@dimen/margin_3x"
+        android:layout_marginStart="@dimen/margin_3x"
+        android:gravity="center"
+        android:text = "@string/error_wifi"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/guide_line"
+        />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btn_retry"
+        android:layout_width="wrap_content"
+        android:layout_height="@dimen/size_40"
+        style="@style/Button_font_theme"
+        android:text="@string/str_retry"
+        android:textSize="@dimen/text_normal"
+        android:textAllCaps="false"
+        app:cornerRadius="@dimen/margin_1x"
+        android:textStyle="bold"
+        android:visibility="gone"
+        app:backgroundTint="@color/colorPrimaryDark"
+        android:layout_marginEnd="@dimen/margin_3x"
+        android:layout_marginTop="@dimen/margin_4x"
+        android:layout_marginBottom="@dimen/margin_4x"
+        app:layout_constraintVertical_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tv_error"
+        />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

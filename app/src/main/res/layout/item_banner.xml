@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="150dp"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+
+    >
+
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/cv_banner"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:cardCornerRadius="@dimen/margin_1x"
+        app:cardElevation="@dimen/margin_1x"
+        android:layout_margin="@dimen/margin_1x"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+      >
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/iv_banner"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:src="@drawable/sample_banner"
+            android:scaleType="fitXY"/>
+
+<!--        <androidx.constraintlayout.widget.ConstraintLayout-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="match_parent">-->
+
+<!--            <androidx.appcompat.widget.AppCompatImageView-->
+<!--                android:id="@+id/iv_what_new"-->
+<!--                android:layout_width="0dp"-->
+<!--                android:layout_height="0dp"-->
+<!--                android:src="@drawable/doctor_photo"-->
+<!--                android:scaleType="centerCrop"-->
+<!--                app:layout_constraintEnd_toEndOf="parent"-->
+<!--                app:layout_constraintTop_toTopOf="parent"-->
+<!--                app:layout_constraintBottom_toBottomOf="parent"-->
+<!--                app:layout_constraintWidth_percent="0.35"/>-->
+<!--            <LinearLayout-->
+<!--                android:layout_width="0dp"-->
+<!--                android:layout_height="match_parent"-->
+<!--                app:layout_constraintWidth_percent="0.65"-->
+<!--                android:padding="@dimen/margin_2x"-->
+<!--                android:orientation="vertical"-->
+<!--                android:gravity="center"-->
+<!--                app:layout_constraintStart_toStartOf="parent"-->
+<!--                app:layout_constraintEnd_toStartOf="@id/iv_what_new"-->
+<!--                app:layout_constraintTop_toTopOf="parent"-->
+<!--                app:layout_constraintBottom_toBottomOf="parent"-->
+<!--                >-->
+
+<!--                <androidx.appcompat.widget.AppCompatTextView-->
+<!--                    android:id="@+id/tv_what_new_body"-->
+<!--                    android:layout_width="match_parent"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:maxLines="2"-->
+<!--                    android:ellipsize="end"-->
+<!--                    style="@style/CustomFont_Normal_Gray"-->
+<!--                    android:lineSpacingExtra="2dp"-->
+<!--                    />-->
+
+<!--                <com.google.android.material.button.MaterialButton-->
+<!--                    android:id="@+id/btn_what_new_book"-->
+<!--                    android:layout_width="wrap_content"-->
+<!--                    android:layout_height="40dp"-->
+<!--                    style="@style/Button_font_theme"-->
+<!--                    app:cornerRadius="@dimen/margin_1x"-->
+<!--                    android:text="@string/str_book_now"-->
+<!--                    android:textAllCaps="false"-->
+<!--                    android:backgroundTint="@color/colorRed"-->
+<!--                    android:layout_gravity="left"-->
+<!--                    android:layout_marginTop="@dimen/margin_1x"-->
+<!--                    android:textSize="@dimen/text_small"-->
+<!--                    />-->
+
+
+<!--            </LinearLayout>-->
+
+<!--        </androidx.constraintlayout.widget.ConstraintLayout>-->
+    </com.google.android.material.card.MaterialCardView>
+</LinearLayout>

@@ -1,0 +1,132 @@
+<resources>
+    <string name="app_name">AGB Internet</string>
+    <string name="default_notification_channel_id" translatable="false">200</string>
+    <string name="lbl_username">User Name</string>
+    <string name="lbl_password">Password</string>
+    <string name="str_login">Login</string>
+    <string name="lbl_quick_pay">Quick Pay</string>
+    <string name="str_invoice_not_found">Invoice not Found!</string>
+    <string name="lbl_services">Services</string>
+
+    <string name="title_my_plans">My Plans</string>
+    <string name="title_invoices">Invoices</string>
+    <string name="title_receipts">Receipts</string>
+    <string name="title_profile">Profile</string>
+    <string name="title_t_c">T &amp; C</string>
+    <string name="title_contact">Contact Us</string>
+    <string name="title_support">Support</string>
+    <string name="title_language">Language</string>
+    <string name="title_logout">Log out</string>
+    <string name="str_pay">Pay</string>
+    <string name="lbl_active_plans">Active Plans</string>
+    <string name="title_active_plans">ACTIVE PLANS</string>
+    <string name="title_pending_plans">PENDING PLANS</string>
+    <string name="lbl_pending_plans">Pending Plans</string>
+    <string name="str_change_plan">CHANGE PLAN</string>
+    <string name="str_undo_changes">UNDO CHANGES</string>
+    <string name="lbl_till">Till :\u0020</string>
+    <string name="str_confirmation">Confirmation</string>
+    <string name="desc_do_you_want_to_sure">Do you want to sure?</string>
+    <string name="str_ok">OK</string>
+    <string name="str_cancel">Cancel</string>
+    <string name="lbl_bandwidth">Bandwidth</string>
+    <string name="lbl_pay_per">Pay Per</string>
+    <string name="lbl_amount">Amount</string>
+    <string name="dialog_change_plan_desc">This plan will become active from 12 Desc 2021</string>
+    <string name="hint_search_invoices">Search Invoices...</string>
+    <string name="str_unpaid">Unpaid</string>
+    <string name="lbl_due">Due :\u0020</string>
+    <string name="lbl_invoice_number">Invoice Number</string>
+    <string name="lbl_invoice_id">Invoice No.</string>
+    <string name="lbl_service_id">Service ID</string>
+    <string name="lbl_due_date">Due Date</string>
+    <string name="lbl_dot_dot">\u0020:\u0020</string>
+    <string name="str_description">Description</string>
+    <string name="lbl_total">Total :\u0020</string>
+    <string name="lbl_payment_information"><u>Payment Information</u></string>
+    <string name="title_payment_information">Payment Information</string>
+    <string name="str_pay_now">Pay Now</string>
+    <string name="str_download">Download</string>
+    <string name="hint_search_receipts">Search Receipts...</string>
+    <string name="lbl_paid">Paid :\u0020</string>
+    <string name="lbl_receipt">Receipt</string>
+    <string name="lbl_receipt_id">Receipt ID</string>
+    <string name="lbl_transaction_id">Transaction ID</string>
+    <string name="lbl_payment_type">Payment Type</string>
+    <string name="lbl_paid_date">Paid Date</string>
+    <string name="title_choose_payment">Choose Payment</string>
+    <string name="str_kbz_pay">KBZPay</string>
+    <string name="str_aya_pay">AYA Pay</string>
+    <string name="sample_box">1. Customer shall make payment of Grand Total before due date.\n2. If Grand Total is not paid before due date, connection may be temporarily disabled.\n3. You can Paid By Bank.</string>
+    <string name="str_okay">OKAY</string>
+    <string name="str_cancel_cap">CANCEL</string>
+    <string name="lbl_terms_conditions">Terms &amp; Conditions</string>
+    <string name="lbl_mail">Mail</string>
+    <string name="lbl_phone">Phone Number</string>
+    <string name="lbl_address">Address</string>
+    <string name="str_myanmar">Myanmar</string>
+    <string name="lbl_english">English</string>
+    <string name="str_are_you_sure_you_want_to_log_out">Are you sure you want to log out?</string>
+    <string name="str_confirm">Confirm</string>
+    <string name="lbl_new_password">New Password</string>
+    <string name="lbl_confirm_password">Confirm Password</string>
+    <string name="error_wifi">could not connect to the server</string>
+    <string name="error_service">You haven\'t request any pending services.</string>
+    <string name="error_receipt">You haven\'t received any receipt.</string>
+    <string name="error_invoice">You haven\'t received any invoice.</string>
+    <string name="error_subscribe">You haven\'t subscribe any active services.</string>
+    <string name="invalid_session">Invalid Session</string>
+    <string name="require" translatable="false">Require!</string>
+    <string name="errorTitle" translatable="false">Error!</string>
+    <string name="str_retry">Retry</string>
+    <string name="lbl_change_password">Change Password</string>
+    <string name="str_change">Change</string>
+    <string name="str_agree">Agree</string>
+    <string name="str_disagree">Disagree</string>
+    <string name="lbl_balance">Balance</string>
+    <string name="payment_general_desc">Your payment is processing. Please check status under Invoices screen.</string>
+    <string name="str_info">Info</string>
+    <string name="lbl_viber_no">Viber No</string>
+    <string name="lbl_email">Email</string>
+    <string name="lbl_activation_date">Activation Date</string>
+    <string name="lbl_membership_id">Membership ID</string>
+    <string name="str_save">Save</string>
+    <string name="str_edit">Edit</string>
+    <string name="lbl_alternative_phone">Alternative Phone</string>
+
+    <string name="str_logging_in">LOGGING IN</string>
+
+    <string-array name="arrayPlan">
+        <item>25Mbps</item>
+        <item>20Mbps</item>
+    </string-array>
+
+
+    <string name="lbl_active_plan">Active Plan</string>
+    <string name="lbl_active_category">Category</string>
+    <string name="lbl_active_message">Message</string>
+    <string name="lbl_image_upload">Image Upload</string>
+    <string name="lbl_upload_photo_here">Upload Photo Here</string>
+    <string name="submit_complaint">SUBMIT COMPLAINT</string>
+    <string name="submit_complain_cancel">CANCEL</string>
+    <string name="lbl_open_gallery">Open Gallery</string>
+    <string name="lbl_open_camera">Open Camera</string>
+    <string name="lbl_submit_complaint">Submit Complaint</string>
+    <string name="error_complain">You haven\'t request any Complaint.</string>
+    <string name="lbl_complaint">Complaint</string>
+
+    <string name="lbl_ticket_number">Ticket Number</string>
+    <string name="lbl_ticket_status">Ticket Status</string>
+    <string name="lbl_reply_call_center">Reply</string>
+    <string name="lbl_new_version">New Version</string>
+    <string name="lbl_check_payment">Check Invoices</string>
+    <string name="lbl_det">\u0020-\u0020</string>
+    <string name="lbl_invoice_amount">Invoice Amount</string>
+    <string name="lbl_reference_no">Reference No</string>
+    <string name="title_payment_info">Payment Info</string>
+    <string name="lbl_aya_account_phone">AYA Pay Account Phone Number</string>
+
+
+
+
+</resources>
