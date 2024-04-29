@@ -2,6 +2,7 @@ package com.agb.billing.customer.activities
 
 import android.content.Context
 import android.content.Intent
+import android.graphics.Color
 import android.os.Bundle
 import android.text.Editable
 import android.text.TextWatcher
@@ -168,13 +169,13 @@ class InvoiceActivity : BaseActivity(), InvoiceDelegate, InvoiceListView {
 
     private fun viewLayoutVisible(b: Boolean) {
         binding.apply {
+            lyError.layoutError.visibility = View.GONE
             if (b) {
                 shimmerLoading.stopShimmer()
-                cvInvoices.visibility = View.VISIBLE
+                rvInvoices.visibility = View.VISIBLE
                 shimmerLoading.visibility = View.GONE
             } else {
                 shimmerLoading.startShimmer()
-                cvInvoices.visibility = View.GONE
                 shimmerLoading.visibility = View.VISIBLE
             }
         }
@@ -210,7 +211,7 @@ class InvoiceActivity : BaseActivity(), InvoiceDelegate, InvoiceListView {
     }
 
     override fun showVersionUpdate(message: String, storeUrl: String) {
-        showVersionUpdateDialog(message,storeUrl)
+        showVersionUpdateDialog(message, storeUrl)
         viewLayoutVisible(true)
         dismissProgress()
 
@@ -221,10 +222,9 @@ class InvoiceActivity : BaseActivity(), InvoiceDelegate, InvoiceListView {
         binding.apply {
             shimmerLoading.stopShimmer()
             shimmerLoading.visibility = View.GONE
-            cvInvoices.visibility = View.GONE
-            lyError.layoutError.visibility = View.VISIBLE
             lyError.ivError.setImageResource(R.drawable.ic_component_invoices)
             lyError.tvError.text = resources.getString(R.string.error_invoice)
+            lyError.layoutError.visibility = View.VISIBLE
         }
     }
 
@@ -232,7 +232,9 @@ class InvoiceActivity : BaseActivity(), InvoiceDelegate, InvoiceListView {
         binding.apply {
             shimmerLoading.stopShimmer()
             shimmerLoading.visibility = View.GONE
-            cvInvoices.visibility = View.GONE
+            rvInvoices.visibility = View.INVISIBLE
+            lyError.ivError.setImageResource(R.drawable.ic_component_wifi)
+            lyError.tvError.text = resources.getString(R.string.error_wifi)
             lyError.layoutError.visibility = View.VISIBLE
         }
     }

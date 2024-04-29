@@ -125,4 +125,10 @@
     <string name="title_payment_info">ငွေပေးချေမှုအချက်အလက်</string>
     <string name="lbl_aya_account_phone">AYA Pay Account Phone Number</string>
 
+    <string name="err_require_inovice_number">ငွေတောင်းခံလွှာနံပါတ် လိုအပ်ပါသည်။</string>
+    <string name="empty_noti_list">သင်သည် မည်သည့်အကြောင်းကြားစာမျှ မရရှိခဲ့ပါ။</string>
+    <string name="title_notification">အသိပေးချက်များ</string>
+    <string name="not_available_yet_txt">အစီအစဉ်ပြောင်းလဲမှုအတွက် ဝန်ဆောင်မှုကို မရရှိနိုင်သေးပါ။</string>
+
+
 </resources>

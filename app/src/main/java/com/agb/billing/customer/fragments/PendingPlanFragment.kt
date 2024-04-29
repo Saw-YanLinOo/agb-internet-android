@@ -1,6 +1,7 @@
 package com.agb.billing.customer.fragments
 
 import android.content.Context
+import android.graphics.Color
 import android.os.Bundle
 import android.os.Handler
 import android.util.Log
@@ -27,20 +28,20 @@ import com.agb.billing.customer.views.CancelPlanView
 import com.agb.billing.customer.views.PendingPlanView
 import com.google.gson.Gson
 
-class PendingPlanFragment : BaseFragment(),PendingPlanView,
-    PendingPlanDelegate,ConfirmationDelegate,CancelPlanView {
+class PendingPlanFragment : BaseFragment(), PendingPlanView,
+    PendingPlanDelegate, ConfirmationDelegate, CancelPlanView {
 
-    private var _binding : FragmentPendingPlanBinding ?= null
+    private var _binding: FragmentPendingPlanBinding? = null
     private val binding get() = _binding!!
-    lateinit var mView : View
-    lateinit var mAdapter : PendingPlanAdapter
-    lateinit var mActivity : MyPlanActivity
-    lateinit var mViewModel : PendingPlanListViewModel
-    lateinit var mCancelPlanViewModel : CancelPlanViewModel
+    lateinit var mView: View
+    lateinit var mAdapter: PendingPlanAdapter
+    lateinit var mActivity: MyPlanActivity
+    lateinit var mViewModel: PendingPlanListViewModel
+    lateinit var mCancelPlanViewModel: CancelPlanViewModel
     var pageNo = 1
     var prePageNo = 2
-    var mList : MutableList<PendingPlanVO> = mutableListOf()
-    var mCancelPlanVO : PendingPlanVO ?= null
+    var mList: MutableList<PendingPlanVO> = mutableListOf()
+    var mCancelPlanVO: PendingPlanVO? = null
 
     override fun onAttach(context: Context) {
         super.onAttach(context)
@@ -52,7 +53,7 @@ class PendingPlanFragment : BaseFragment(),PendingPlanView,
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        _binding = FragmentPendingPlanBinding.inflate(inflater,container,false)
+        _binding = FragmentPendingPlanBinding.inflate(inflater, container, false)
         mView = binding.root
 
         initLayout()
@@ -118,7 +119,7 @@ class PendingPlanFragment : BaseFragment(),PendingPlanView,
     override fun onTapUndoPlan(data: PendingPlanVO) {
         mCancelPlanVO = data
         val dialog = ConfirmationDialog.newInstance(this)
-        dialog.show(childFragmentManager,"confirmation")
+        dialog.show(childFragmentManager, "confirmation")
     }
 
     override fun onTapConfirm() {
@@ -130,29 +131,28 @@ class PendingPlanFragment : BaseFragment(),PendingPlanView,
             lyError.layoutError.visibility = View.GONE
             if (b) {
                 shimmerLoading.stopShimmer()
-                lyMain.visibility = View.VISIBLE
+                rvPendingPlan.visibility = View.VISIBLE
                 shimmerLoading.visibility = View.GONE
             } else {
                 shimmerLoading.startShimmer()
-                lyMain.visibility = View.GONE
                 shimmerLoading.visibility = View.VISIBLE
             }
         }
     }
 
-    fun onrefreshList(){
+    fun onrefreshList() {
         viewLayoutVisible(false)
         pageNo = 1
         prePageNo = 2
-        Handler().postDelayed(object : Runnable{
+        Handler().postDelayed(object : Runnable {
             override fun run() {
                 pendingPlanApiCall()
             }
 
-        },2000)
+        }, 2000)
     }
 
-    fun cancelPlanApiCall(){
+    fun cancelPlanApiCall() {
         showProgress()
         val request = CancelPlanRequest()
         request.id = mCancelPlanVO?.id
@@ -165,21 +165,21 @@ class PendingPlanFragment : BaseFragment(),PendingPlanView,
         dismissProgress()
         binding.swipeRefreshLayout.isRefreshing = false
 
-        if(response.data != null){
+        if (response.data != null) {
             Log.e("PENDING_PLAN_LIST", Gson().toJson(response.data))
-            if(response.data!!.size > 0){
+            if (response.data!!.size > 0) {
 //                if(prePageNo == 2) {
-                    mList = response.data!!
-                    mAdapter.setNewData(mList)
+                mList = response.data!!
+                mAdapter.setNewData(mList)
 //                }else{
 //                    mList.addAll(response.data!!)
 //                    mAdapter.notifyDataSetChanged()
 //                }
 //                pageNo += 1
-            }else{
+            } else {
                 hideLoadingError()
             }
-        }else{
+        } else {
             hideLoadingError()
         }
     }
@@ -197,7 +197,7 @@ class PendingPlanFragment : BaseFragment(),PendingPlanView,
 
     override fun showInvalidSession(message: String, code: String) {
         binding.swipeRefreshLayout.isRefreshing = false
-        mInvalidSession(mActivity,message)
+        mInvalidSession(mActivity, message)
     }
 
     override fun showNetworkFailed() {
@@ -209,10 +209,9 @@ class PendingPlanFragment : BaseFragment(),PendingPlanView,
         binding.apply {
             shimmerLoading.stopShimmer()
             shimmerLoading.visibility = View.GONE
-            lyMain.visibility = View.GONE
-            lyError.layoutError.visibility = View.VISIBLE
             lyError.ivError.setImageResource(R.drawable.ic_component_service)
             lyError.tvError.text = resources.getString(R.string.error_service)
+            lyError.layoutError.visibility = View.VISIBLE
         }
     }
 
@@ -220,10 +219,13 @@ class PendingPlanFragment : BaseFragment(),PendingPlanView,
         binding.apply {
             shimmerLoading.stopShimmer()
             shimmerLoading.visibility = View.GONE
-            lyMain.visibility = View.GONE
+            rvPendingPlan.visibility = View.INVISIBLE
+            lyError.ivError.setImageResource(R.drawable.ic_component_wifi)
+            lyError.tvError.text = resources.getString(R.string.error_wifi)
             lyError.layoutError.visibility = View.VISIBLE
         }
     }
+
     private fun showProgress() {
         try {
             showProgressDialog?.show()

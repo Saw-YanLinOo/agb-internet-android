@@ -2,6 +2,7 @@ package com.agb.billing.customer.activities
 
 import android.content.Context
 import android.content.Intent
+import android.graphics.Color
 import android.os.Build
 import android.os.Bundle
 import android.text.Html
@@ -48,7 +49,14 @@ class TermConditionActivity : BaseActivity(), TNCView {
     }
 
     private fun initLayout() {
+        binding.apply {
+            swipeRefreshLayout.setColorSchemeColors(resources.getColor(R.color.colorSecondary))
 
+            swipeRefreshLayout.setOnRefreshListener {
+                viewLayoutVisible(false)
+                apiCall()
+            }
+        }
     }
 
     private fun clickEvent() {
@@ -64,11 +72,10 @@ class TermConditionActivity : BaseActivity(), TNCView {
             lyError.layoutError.visibility = View.GONE
             if (b) {
                 shimmerLoading.stopShimmer()
-                cvTermCondition.visibility = View.VISIBLE
+                tvTermConditionDesc.visibility = View.VISIBLE
                 shimmerLoading.visibility = View.GONE
             } else {
                 shimmerLoading.startShimmer()
-                cvTermCondition.visibility = View.GONE
                 shimmerLoading.visibility = View.VISIBLE
             }
         }
@@ -82,11 +89,16 @@ class TermConditionActivity : BaseActivity(), TNCView {
 
     override fun setTNC(response: TNCResponse) {
         viewLayoutVisible(true)
+        binding.swipeRefreshLayout.isRefreshing = false
         if (response.data?.description.toString().contains("<")) {
             if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.N) {
-                binding.tvTermConditionDesc.setText(Html.fromHtml(response.data?.description.toString(), Html.FROM_HTML_MODE_COMPACT));
+                binding.tvTermConditionDesc.text = Html.fromHtml(
+                    response.data?.description.toString(),
+                    Html.FROM_HTML_MODE_COMPACT
+                )
             } else {
-                binding.tvTermConditionDesc.setText(Html.fromHtml(response.data?.description.toString()));
+                binding.tvTermConditionDesc.text =
+                    Html.fromHtml(response.data?.description.toString());
             }
         } else {
             binding.tvTermConditionDesc.text = response.data?.description.toString()
@@ -98,6 +110,7 @@ class TermConditionActivity : BaseActivity(), TNCView {
     }
 
     override fun showInvalidSession(message: String, code: String) {
+        binding.swipeRefreshLayout.isRefreshing = false
         mInvalidSession(this, message)
     }
 
@@ -106,10 +119,11 @@ class TermConditionActivity : BaseActivity(), TNCView {
     }
 
     private fun hideLoadingNetwork() {
-
         binding.apply {
+            swipeRefreshLayout.isRefreshing = false
             shimmerLoading.stopShimmer()
-            lyMain.visibility = View.GONE
+            shimmerLoading.visibility = View.GONE
+            tvTermConditionDesc.visibility = View.INVISIBLE
             lyError.layoutError.visibility = View.VISIBLE
         }
     }

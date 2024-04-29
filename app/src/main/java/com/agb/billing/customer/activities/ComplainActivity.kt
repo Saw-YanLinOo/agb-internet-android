@@ -17,6 +17,7 @@ import com.agb.billing.customer.R
 import com.agb.billing.customer.adapter.ActivePlanSpinnerAdapter
 import com.agb.billing.customer.adapter.CategorySpinnerAdapter
 import com.agb.billing.customer.databinding.ActivityComplainBinding
+import com.agb.billing.customer.dialog.ImageViewerDialog
 import com.agb.billing.customer.modelVO.ActivePlanVO
 import com.agb.billing.customer.modelVO.CategoryComplainVO
 import com.agb.billing.customer.modelVO.ComplainVO
@@ -35,6 +36,7 @@ import com.github.dhaval2404.imagepicker.ImagePicker
 class ComplainActivity : BaseActivity(), ComplainView {
     lateinit var binding: ActivityComplainBinding
     private var mImageByte: String = ""
+    private var fileUri = Uri.parse("")
     lateinit var mViewModel: ComplainViewModel
     var activePlanList: MutableList<ActivePlanVO> = mutableListOf()
     var categoryList: MutableList<CategoryComplainVO> = mutableListOf()
@@ -93,6 +95,9 @@ class ComplainActivity : BaseActivity(), ComplainView {
                 .load(complainVO!!.complainPhoto)
                 .into(binding.ivPhoto)
             binding.imgRemove.visibility = View.VISIBLE
+            binding.ivPhoto.visibility = View.VISIBLE
+            binding.lblUploadPhoto.visibility = View.GONE
+            binding.lyPhotoButton.visibility = View.GONE
         }
 
         binding.apply {
@@ -118,8 +123,6 @@ class ComplainActivity : BaseActivity(), ComplainView {
             tvTicketNumber.visibility = View.VISIBLE
             lblTicketStatus.visibility = View.VISIBLE
             tvTicketStatus.visibility = View.VISIBLE
-
-
         }
         binding.etMessage.requestFocus()
         binding.etMessage.showSoftInputOnFocus = false
@@ -141,7 +144,8 @@ class ComplainActivity : BaseActivity(), ComplainView {
         binding.etReply.setOnTouchListener { v, event ->
             v.parent.requestDisallowInterceptTouchEvent(true)
             when (event.action and MotionEvent.ACTION_MASK) {
-                MotionEvent.ACTION_UP -> {v.parent.requestDisallowInterceptTouchEvent(false)
+                MotionEvent.ACTION_UP -> {
+                    v.parent.requestDisallowInterceptTouchEvent(false)
 
                 }
             }
@@ -159,7 +163,9 @@ class ComplainActivity : BaseActivity(), ComplainView {
             tvDialogCancel.setOnClickListener {
                 onBackPressed()
             }
-
+            ivPhoto.setOnClickListener {
+                showPopUp()
+            }
             imgRemove.setOnClickListener {
                 onBindData()
             }
@@ -175,6 +181,13 @@ class ComplainActivity : BaseActivity(), ComplainView {
         }
     }
 
+    private fun showPopUp() {
+        val imageViewerDialog = ImageViewerDialog(
+            fileUri, complainVO
+        )
+        imageViewerDialog.show(supportFragmentManager, "Image")
+    }
+
     private fun checkInput() {
 
         if (!binding.etMessage.text.isNullOrEmpty()) {
@@ -186,6 +199,9 @@ class ComplainActivity : BaseActivity(), ComplainView {
 
     private fun onBindData() {
         binding.imgRemove.visibility = View.GONE
+        binding.ivPhoto.visibility = View.GONE
+        binding.lblUploadPhoto.visibility = View.VISIBLE
+        binding.lyPhotoButton.visibility = View.VISIBLE
         mImageByte = ""
         Glide.with(binding.root)
             .load("")
@@ -232,7 +248,6 @@ class ComplainActivity : BaseActivity(), ComplainView {
             .maxResultSize(1080, 1080)
             .createIntent { Intent: Intent? ->
                 resultForProfileImageResult.launch(Intent)
-
             }
     }
 
@@ -253,8 +268,11 @@ class ComplainActivity : BaseActivity(), ComplainView {
             when (resultCode) {
                 Activity.RESULT_OK -> {
                     binding.imgRemove.visibility = View.VISIBLE
+                    binding.ivPhoto.visibility = View.VISIBLE
+                    binding.lblUploadPhoto.visibility = View.GONE
+                    binding.lyPhotoButton.visibility = View.GONE
                     //Image Uri will not be null for RESULT_OK
-                    val fileUri = data?.data!!
+                    fileUri = data?.data!!
                     Glide.with(binding.root)
                         .load(fileUri)
                         //.placeholder(R.drawable.ic_user_default)
@@ -264,14 +282,14 @@ class ComplainActivity : BaseActivity(), ComplainView {
 
                     imageToByte(fileUri)
 
-
                 }
 
                 ImagePicker.RESULT_ERROR -> {
                     Toast.makeText(this, ImagePicker.getError(data), Toast.LENGTH_SHORT).show()
                 }
+
                 else -> {
-                    Toast.makeText(this, "Task Cancelled", Toast.LENGTH_SHORT).show()
+//                    Toast.makeText(this, "Task Cancelled", Toast.LENGTH_SHORT).show()
                 }
             }
 
@@ -323,7 +341,6 @@ class ComplainActivity : BaseActivity(), ComplainView {
         } else {
             hideLoadingError()
         }
-
     }
 
     private fun bindSpinner() {
@@ -365,8 +382,6 @@ class ComplainActivity : BaseActivity(), ComplainView {
 
         if (complainVO != null)
             onBindEditData()
-
-
     }
 
 
@@ -375,6 +390,8 @@ class ComplainActivity : BaseActivity(), ComplainView {
             shimmerLoading.stopShimmer()
             shimmerLoading.visibility = View.GONE
             cvSubmit.visibility = View.GONE
+            lyError.ivError.setImageResource(R.drawable.ic_component_wifi)
+            lyError.tvError.text = resources.getString(R.string.error_wifi)
             lyError.layoutError.visibility = View.VISIBLE
         }
     }
@@ -391,23 +408,20 @@ class ComplainActivity : BaseActivity(), ComplainView {
     }
 
     override fun showVersionUpdate(message: String, storeUrl: String) {
-        showVersionUpdateDialog(message,storeUrl)
+        showVersionUpdateDialog(message, storeUrl)
         viewLayoutVisible(true)
     }
 
     override fun showError(message: String, code: String) {
         hideLoadingNetwork()
-
     }
 
     override fun showInvalidSession(message: String, code: String) {
         mInvalidSession(this, message)
-
     }
 
     override fun showNetworkFailed() {
         hideLoadingNetwork()
-
     }
 
     override fun onBackPressed() {

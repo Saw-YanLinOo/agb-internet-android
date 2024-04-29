@@ -6,7 +6,7 @@ plugins {
 
 
 android {
-    compileSdk 33
+    compileSdk 34
 
     buildFeatures {
         viewBinding = true
@@ -15,7 +15,7 @@ android {
     defaultConfig {
         applicationId "com.agb.billing.customer"
         minSdk 21
-        targetSdk 33
+        targetSdk 34
         versionCode 6
         versionName "1.5"
 
@@ -72,6 +72,7 @@ android {
             enableSplit = false
         }
     }
+    namespace 'com.agb.billing.customer'
 }
 
 dependencies {
@@ -119,13 +120,9 @@ dependencies {
     implementation 'com.google.firebase:firebase-core:20.0.2'
 
 //    implementation 'com.gmavenoogle.firebase:firebase-analytics:17.3.0'
-//    implementation 'com.google.firebase:firebase-messaging:20.1.4'
-//    implementation 'com.google.firebase:firebase-core:17.3.0'
 
     //eventBus
     implementation 'org.greenrobot:eventbus:3.3.1'
-
-    //image picker
 
     implementation 'com.github.dhaval2404:imagepicker:2.1'
     implementation "androidx.activity:activity-ktx:1.4.0"

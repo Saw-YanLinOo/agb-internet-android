@@ -21,12 +21,49 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/ly_notification"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:visibility="gone"
+            app:layout_constraintBottom_toBottomOf="@+id/iv_logo"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@id/iv_logo">
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/iv_notification"
+                android:layout_width="@dimen/size_35"
+                android:layout_height="@dimen/size_35"
+                android:layout_marginHorizontal="@dimen/margin_3x"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:srcCompat="@drawable/ic_noti" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/textView"
+                android:layout_width="@dimen/size_25"
+                android:layout_height="@dimen/size_25"
+                android:layout_marginStart="24dp"
+                android:layout_marginBottom="@dimen/size_20"
+                android:padding="2dp"
+                android:textAlignment="center"
+                android:textColor="@color/white"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toBottomOf="@+id/iv_notification"
+                app:layout_constraintEnd_toEndOf="@+id/iv_notification"
+                app:layout_constraintHorizontal_bias="0.803"
+                app:layout_constraintStart_toStartOf="@+id/iv_notification" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
         <androidx.appcompat.widget.AppCompatImageView
             android:id="@+id/iv_logo"
             android:layout_width="wrap_content"
             android:layout_height="?attr/actionBarSize"
             android:layout_marginTop="@dimen/margin_2x"
-            android:src="@drawable/ic_logo"
+            android:src="@drawable/logo_3"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
@@ -35,12 +72,12 @@
             android:id="@+id/iv_language"
             android:layout_width="@dimen/size_30"
             android:layout_height="@dimen/size_30"
-            android:layout_marginTop="@dimen/margin_2x"
             android:layout_marginStart="@dimen/margin_3x"
+            android:layout_marginTop="@dimen/margin_2x"
             android:layout_marginEnd="@dimen/margin_3x"
             android:src="@drawable/myanmar"
-            app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintBottom_toBottomOf="@+id/iv_logo"
+            app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="@id/iv_logo" />
 
         <RelativeLayout
@@ -177,7 +214,7 @@
                     android:id="@+id/rv_home_category"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="@dimen/margin_1x"
+                    android:layout_marginTop="8dp"
                     android:layout_marginBottom="@dimen/margin_2x"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
@@ -266,9 +303,9 @@
                     style="@style/Button_font_theme"
                     android:layout_width="0dp"
                     android:layout_height="@dimen/size_40"
-                    android:layout_marginStart="@dimen/margin_1x"
+                    android:layout_marginStart="8dp"
                     android:layout_marginTop="@dimen/margin_3x"
-                    android:layout_marginEnd="@dimen/margin_1x"
+                    android:layout_marginEnd="8dp"
                     android:layout_marginBottom="@dimen/margin_3x"
                     android:insetLeft="0dp"
                     android:insetTop="0dp"
@@ -289,9 +326,9 @@
                     style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
                     android:layout_width="0dp"
                     android:layout_height="@dimen/size_60"
-                    android:layout_marginStart="@dimen/margin_1x"
+                    android:layout_marginStart="8dp"
                     android:layout_marginTop="@dimen/margin_2x"
-                    android:layout_marginEnd="@dimen/margin_1x"
+                    android:layout_marginEnd="8dp"
                     app:errorTextColor="@color/colorPrimary"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"

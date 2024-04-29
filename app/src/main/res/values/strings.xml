@@ -126,7 +126,11 @@
     <string name="title_payment_info">Payment Info</string>
     <string name="lbl_aya_account_phone">AYA Pay Account Phone Number</string>
 
-
+    <string name="err_require_inovice_number">require invoice number!</string>
+    <string name="empty_noti_list">You haven\'t received any notifications!</string>
+    <string name="title_notification">Notification</string>
+    <string name="coming_soon" translatable="false">Coming Soon!</string>
+    <string name="not_available_yet_txt">Feature not available yet for plan change!</string>
 
 
 </resources>

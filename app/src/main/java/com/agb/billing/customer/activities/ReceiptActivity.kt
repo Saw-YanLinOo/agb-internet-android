@@ -2,6 +2,7 @@ package com.agb.billing.customer.activities
 
 import android.content.Context
 import android.content.Intent
+import android.graphics.Color
 import android.os.Bundle
 import android.text.Editable
 import android.text.TextWatcher
@@ -172,13 +173,13 @@ class ReceiptActivity : BaseActivity(), ReceiptDelegate, ReceiptListView {
 
     private fun viewLayoutVisible(b: Boolean) {
         binding.apply {
+            lyError.layoutError.visibility = View.GONE
             if (b) {
                 shimmerLoading.stopShimmer()
-                cvReceipt.visibility = View.VISIBLE
+                rvReceipt.visibility = View.VISIBLE
                 shimmerLoading.visibility = View.GONE
             } else {
                 shimmerLoading.startShimmer()
-                cvReceipt.visibility = View.GONE
                 shimmerLoading.visibility = View.VISIBLE
             }
         }
@@ -218,10 +219,9 @@ class ReceiptActivity : BaseActivity(), ReceiptDelegate, ReceiptListView {
         binding.apply {
             shimmerLoading.stopShimmer()
             shimmerLoading.visibility = View.GONE
-            cvReceipt.visibility = View.GONE
-            lyError.layoutError.visibility = View.VISIBLE
             lyError.ivError.setImageResource(R.drawable.ic_component_receipts)
             lyError.tvError.text = resources.getString(R.string.error_receipt)
+            lyError.layoutError.visibility = View.VISIBLE
         }
     }
 
@@ -229,7 +229,9 @@ class ReceiptActivity : BaseActivity(), ReceiptDelegate, ReceiptListView {
         binding.apply {
             shimmerLoading.stopShimmer()
             shimmerLoading.visibility = View.GONE
-            cvReceipt.visibility = View.GONE
+            rvReceipt.visibility = View.INVISIBLE
+            lyError.ivError.setImageResource(R.drawable.ic_component_wifi)
+            lyError.tvError.text = resources.getString(R.string.error_wifi)
             lyError.layoutError.visibility = View.VISIBLE
         }
     }

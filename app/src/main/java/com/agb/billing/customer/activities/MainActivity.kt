@@ -8,6 +8,7 @@ import android.content.Intent.FLAG_ACTIVITY_CLEAR_TASK
 import android.content.Intent.FLAG_ACTIVITY_NEW_TASK
 import android.content.pm.PackageManager
 import android.content.res.ColorStateList
+import android.net.Uri
 import android.os.Build
 import android.os.Bundle
 import android.os.Handler
@@ -60,20 +61,20 @@ class MainActivity : BaseActivity(), BannerDelegate,
     private var handler = Handler()
     private var delay = 3000L
     private var page = 0
-    var dialogShow = false
-    var paidStatus = 1//1 is paid ,2 is unpaid
-    var searchInvoiceNo = ""
-    var infoDialog: PaymentSuccessDialog? = null
-    var paymentDialog: PaymentSuccessDialog? = null
+    private var dialogShow = false
+    private var paidStatus = 1//1 is paid ,2 is unpaid
+    private var searchInvoiceNo = ""
+    private var infoDialog: PaymentSuccessDialog? = null
+    private var paymentDialog: PaymentSuccessDialog? = null
 
     lateinit var bannerAdapter: BannerVpAdapter
-    lateinit var mCategoryAdapter: CategoryAdapter
+    private lateinit var mCategoryAdapter: CategoryAdapter
     lateinit var mViewModel: HomeViewModel
     var mList = mutableListOf<InvoiceVO>()
     var invoiceList = arrayListOf<String>()
     var pageNo = 1
     var mInvoiceVO: InvoiceVO? = null
-    var arrayAdapter: ArrayAdapter<String>? = null
+    private var arrayAdapter: ArrayAdapter<String>? = null
 
     private var mSign = ""
     private var mSignType = ""
@@ -89,7 +90,7 @@ class MainActivity : BaseActivity(), BannerDelegate,
         }
     }
 
-    var timerun = object : Runnable {
+    private var timerun = object : Runnable {
         override fun run() {
             if (bannerAdapter.count == page) {
                 page = 0
@@ -126,10 +127,15 @@ class MainActivity : BaseActivity(), BannerDelegate,
         requestPermissionLauncher =
             registerForActivityResult(ActivityResultContracts.RequestPermission()) {
                 if (it) {
-                    Toast.makeText(this, "notification permission is allowed",Toast.LENGTH_SHORT).show()
+                    Toast.makeText(this, "notification permission is allowed", Toast.LENGTH_SHORT)
+                        .show()
                 } else {
 
-                     Toast.makeText(this, "Please grant Notification permission from App Settings",Toast.LENGTH_SHORT).show()
+                    Toast.makeText(
+                        this,
+                        "Please grant Notification permission from App Settings",
+                        Toast.LENGTH_SHORT
+                    ).show()
                 }
             }
 
@@ -215,11 +221,15 @@ class MainActivity : BaseActivity(), BannerDelegate,
         binding.apply {
             btnPay.setOnClickListener {
                 //  hideKeyboard()
-                if (mInvoiceVO != null) {
-                    searchInvoiceNo = mInvoiceVO?.invnumber.toString()
-                    val dialog =
-                        PaymentTypeDialogV2(this@MainActivity, mInvoiceVO?.invnumber.toString())
-                    dialog.show(supportFragmentManager, "Payment")
+                if (etInvoiceNo.text.toString().isNotEmpty()) {
+                    if (mInvoiceVO != null) {
+                        searchInvoiceNo = mInvoiceVO?.invnumber.toString()
+                        val dialog =
+                            PaymentTypeDialogV2(this@MainActivity, mInvoiceVO?.invnumber.toString())
+                        dialog.show(supportFragmentManager, "Payment")
+                    }
+                } else {
+                    etInvoiceNo.error = getString(R.string.err_require_inovice_number)
                 }
             }
 
@@ -239,6 +249,7 @@ class MainActivity : BaseActivity(), BannerDelegate,
                 override fun onTextChanged(p0: CharSequence?, p1: Int, p2: Int, p3: Int) {
                     mInvoiceVO = null
                     if (p0.toString().isNotEmpty()) {
+                        etInvoiceNo.error = null
                         if (mList.size > 0) {
                             val list = mList.filter { it.invnumber!! == (p0.toString()) }
 
@@ -308,6 +319,11 @@ class MainActivity : BaseActivity(), BannerDelegate,
                 return@setOnTouchListener false
             }
 
+            lyNotification.setOnClickListener {
+                startActivity(NotificationActivity.newInstance(this@MainActivity))
+                overridePendingTransition(R.anim.left_in, R.anim.left_out)
+            }
+
             ivLanguage.setOnClickListener {
                 startActivity(LanguageActivity.newInstance(this@MainActivity))
                 overridePendingTransition(R.anim.left_in, R.anim.left_out)
@@ -336,16 +352,18 @@ class MainActivity : BaseActivity(), BannerDelegate,
 
 
             val currentLangImg = if (lang == Constants.LANG_UNI)
-                R.drawable.myanmar
+                R.drawable.logo_myanmar
             else
-                R.drawable.united_states
+                R.drawable.logo_united_states
             ivLanguage.setImageResource(currentLangImg)
 
         }
     }
 
     override fun onTapBanner(data: BannerVO) {
-
+//        startActivity(Intent(Intent.ACTION_VIEW, Uri.parse(data.imagePath)))
+        startActivity(Intent(Intent.ACTION_VIEW, Uri.parse("https://www.agbcommunication.com/")))
+        overridePendingTransition(R.anim.left_in, R.anim.left_out)
     }
 
     override fun onTapCategory(data: CategoryVO) {
@@ -376,7 +394,7 @@ class MainActivity : BaseActivity(), BannerDelegate,
             }
 
             6 -> {
-                startActivity(SupportActivity.newInstance(this))
+                startActivity(ContactUsActivity.newInstance(this))
                 overridePendingTransition(R.anim.left_in, R.anim.left_out)
             }
 
@@ -613,17 +631,16 @@ class MainActivity : BaseActivity(), BannerDelegate,
         viewLayoutVisible(true)
         dismissProgress()
 
-        if (code==Constants.FIELD_ERROR_CODE){
+        if (code == Constants.FIELD_ERROR_CODE) {
             val paymentInfoDialog = AYAPaymentSuccessAndErrorDialog(
                 this,
                 getString(R.string.title_payment_info),
                 message,
-                code=Constants.FIELD_ERROR_CODE
+                code = Constants.FIELD_ERROR_CODE
 
             )
             paymentInfoDialog.show(supportFragmentManager, "paymentInfo")
-        }
-        else
+        } else
             showErrorDialogWithEvent(getString(R.string.errorTitle), message)
     }
 
@@ -706,7 +723,7 @@ class MainActivity : BaseActivity(), BannerDelegate,
         val dialog = builder.create()
         dialog.window!!.attributes.windowAnimations = R.style.MyAlertDialogStyle
         dialog.show()
-        dialog.setCancelable(false)
+        dialog.setCancelable(true)
 
     }
 
@@ -802,7 +819,7 @@ class MainActivity : BaseActivity(), BannerDelegate,
                 this,
                 paymentVO?.title.toString(),
                 paymentVO?.desc.toString(),
-                code=Constants.API_SUCCESS_CODE
+                code = Constants.API_SUCCESS_CODE
 
             )
             paymentInfoDialog.show(supportFragmentManager, "paymentInfo")
@@ -836,7 +853,7 @@ class MainActivity : BaseActivity(), BannerDelegate,
         if (response.data != null) {
             val paymentVO = response.data
             mInvoiceVO?.cbPayQRUrl = paymentVO!!.cbPayQRCode
-            mInvoiceVO?.referenceNo=paymentVO!!.referenceNo
+            mInvoiceVO?.referenceNo = paymentVO.referenceNo
             startActivity(
                 CBPayInformationActivity.newInstance(
                     this,
@@ -848,9 +865,8 @@ class MainActivity : BaseActivity(), BannerDelegate,
     }
 
 
-
     override fun onTapOk(code: String) {
-        if (code==Constants.API_SUCCESS_CODE) {
+        if (code == Constants.API_SUCCESS_CODE) {
             startActivity(InvoiceActivity.newInstance(this))
             overridePendingTransition(R.anim.left_in, R.anim.left_out)
         }

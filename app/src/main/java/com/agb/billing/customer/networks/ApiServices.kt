@@ -9,12 +9,13 @@ import com.agb.billing.customer.networks.EndPoints.COMPLAIN_PRELOAD_URL
 import com.agb.billing.customer.networks.EndPoints.HOME_URL
 import com.agb.billing.customer.networks.EndPoints.INVOICE_DETAIL
 import com.agb.billing.customer.networks.EndPoints.INVOICE_LIST_URL
-import com.agb.billing.customer.networks.EndPoints.KBZ_PAYMENT_URL
+import com.agb.billing.customer.networks.EndPoints.PAYMENT_URL
 import retrofit2.Call
 import retrofit2.http.Body
 import retrofit2.http.POST
 import com.agb.billing.customer.networks.EndPoints.LOGIN_URL
 import com.agb.billing.customer.networks.EndPoints.LOGOUT_URL
+import com.agb.billing.customer.networks.EndPoints.NOTIFICATION_URL
 import com.agb.billing.customer.networks.EndPoints.PAYMENT_METHOD
 import com.agb.billing.customer.networks.EndPoints.PENDING_PLAN_URL
 import com.agb.billing.customer.networks.EndPoints.PLAN_BY_BANDWIDTH
@@ -49,7 +50,7 @@ interface ApiServices {
     @POST(RESET_PASSWORD)
     fun getResetPassword(@Body req: ResetPasswordRequest): Call<LoginResponse>
 
-    @POST(KBZ_PAYMENT_URL)
+    @POST(PAYMENT_URL)
     fun getKBZPayment(@Body req: KBZPaymentRequest): Call<KBZPaymentResponse>
 
     @POST(ACTIVE_PLAN_URL)
@@ -100,12 +101,15 @@ interface ApiServices {
     @POST(PAYMENT_METHOD)
     fun getPaymentMethod(): Call<PaymentMethodResponse>
 
-    @POST(KBZ_PAYMENT_URL)
+    @POST(PAYMENT_URL)
     fun ayaPayment(@Body req: PaymentRequest): Call<AYAPaymentResponse>
 
-    @POST(KBZ_PAYMENT_URL)
+    @POST(PAYMENT_URL)
     fun cbPayment(@Body req: PaymentRequest): Call<CBPaymentResponse>
 
     @POST(CB_PAYMENT_DOWNLOAD_QR)
     fun cbPaymentQRDownload(@Body req: CBPaymentQRDownloadRequest): Call<CBPaymentQRDownloadQRResponse>
+
+    @POST(NOTIFICATION_URL)
+    fun getNotificationList(@Body req: NotificationRequest): Call<NotificationResponse>
 }

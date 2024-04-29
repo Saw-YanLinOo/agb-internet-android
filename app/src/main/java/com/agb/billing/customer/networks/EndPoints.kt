@@ -3,13 +3,18 @@ package com.agb.billing.customer.networks
 object EndPoints {
 
     //Payment
-    const val KBZ_PAYMENT_URL = "payment/make_payment"
+    const val PAYMENT_URL = "payment/make_payment"
 
-    //API Uat URL
-   // const val BASE_URL = "https://uat6.advent-soft.com/agb_billing/api/"
+    //API old Uat URL
+//    const val BASE_URL = "https://uat6.advent-soft.com/agb_billing/api/"
+
+
+    //api new Uat url
+//    const val BASE_URL = "http://10.103.0.78/billing_api/api/"
+//    var BASE_URL = "http://10.103.0.64:8080/AGBBilling_API/api/"
 
     //API Prod URL
-      const val BASE_URL = "https://app.agbcommunication.com/api/api/"
+    var BASE_URL = "https://app.agbcommunication.com/api/api/"
 
     var BASE_TICKET_URL = ""
 
@@ -35,4 +40,5 @@ object EndPoints {
     const val TICKET_CREATE_URL = "ticket/createOrUpdate.json"
     const val PAYMENT_METHOD = "payment-type-list"
     const val CB_PAYMENT_DOWNLOAD_QR = "payment/downloadQR"
+    const val NOTIFICATION_URL = "notification/getNotificationList"
 }

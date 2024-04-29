@@ -21,6 +21,7 @@
         android:id="@+id/iv_logo"
         android:layout_width="wrap_content"
         android:layout_height="?attr/actionBarSize"
+        android:layout_marginTop="@dimen/margin_2x"
         android:src="@drawable/logo_3"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -76,7 +77,9 @@
                 android:layout_marginStart="@dimen/margin_3x"
                 android:layout_marginTop="@dimen/margin_3x"
                 android:layout_marginEnd="@dimen/margin_3x"
+                android:layout_marginBottom="12dp"
                 app:cardCornerRadius="@dimen/margin_1x"
+                app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent">
@@ -393,7 +396,7 @@
                             android:layout_marginStart="@dimen/margin_2x"
                             android:layout_marginEnd="@dimen/margin_2x"
                             android:scaleType="fitCenter"
-                            android:visibility="visible"
+                            android:visibility="gone"
                             app:layout_constraintBottom_toBottomOf="@+id/constraint_upload"
                             app:layout_constraintEnd_toEndOf="@+id/constraint_upload"
                             app:layout_constraintStart_toStartOf="@+id/constraint_upload"
@@ -404,9 +407,9 @@
                             android:id="@+id/imgRemove"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:layout_marginTop="@dimen/margin_1x"
                             android:layout_marginEnd="@dimen/margin_1x"
                             android:elevation="@dimen/margin_1x"
+                            android:padding="@dimen/margin_1x"
                             android:src="@drawable/ic_cancel_circle"
                             android:visibility="gone"
                             app:layout_constraintEnd_toEndOf="parent"
@@ -425,11 +428,13 @@
                             android:textAlignment="center"
                             android:textColor="@color/colorGray"
                             android:textStyle="bold"
+                            app:layout_constraintEnd_toEndOf="parent"
                             app:layout_constraintStart_toStartOf="parent"
                             app:layout_constraintTop_toTopOf="parent" />
 
 
                         <LinearLayout
+                            android:id="@+id/ly_photo_button"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:gravity="center"

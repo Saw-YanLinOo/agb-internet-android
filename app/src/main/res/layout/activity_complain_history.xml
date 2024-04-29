@@ -21,6 +21,7 @@
         android:id="@+id/iv_logo"
         android:layout_width="wrap_content"
         android:layout_height="?attr/actionBarSize"
+        android:layout_marginTop="@dimen/margin_2x"
         android:src="@drawable/logo_3"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -129,8 +130,19 @@
                         android:background="@color/colorWhite"
                         app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
                         tools:listitem="@layout/item_complain_history" />
+
                 </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
 
+                <include
+                    android:id="@+id/ly_error"
+                    layout="@layout/layout_error"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:visibility="gone"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/btnSubmit" />
             </androidx.constraintlayout.widget.ConstraintLayout>
 
         </com.google.android.material.card.MaterialCardView>
@@ -149,19 +161,6 @@
         </com.facebook.shimmer.ShimmerFrameLayout>
 
     </androidx.constraintlayout.widget.ConstraintLayout>
-
-
-    <include
-        android:id="@+id/ly_error"
-        layout="@layout/layout_error"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:layout_marginTop="@dimen/margin_5x"
-        android:visibility="gone"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/guideline4" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

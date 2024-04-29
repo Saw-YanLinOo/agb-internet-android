@@ -27,24 +27,28 @@ import com.agb.billing.customer.utils.DialogUtil
 import com.agb.billing.customer.viewmodels.ChangePlanPreloadViewModel
 import com.agb.billing.customer.views.ChangePlanPreloadView
 
-class ChangePlanDialog(delegate : ChangePlanDelegate) : BaseDialogFragment(),ChangePlanPreloadView {
+class ChangePlanDialog(delegate: ChangePlanDelegate) : BaseDialogFragment(), ChangePlanPreloadView {
 
-    lateinit var mBandWidthAdapter : BandWidthSpinnerAdapter
-    lateinit var mPayPerAdapter : PayPerSpinnerAdapter
-    private var _binding : DialogChangePlanBinding ?= null
+    lateinit var mBandWidthAdapter: BandWidthSpinnerAdapter
+    lateinit var mPayPerAdapter: PayPerSpinnerAdapter
+    private var _binding: DialogChangePlanBinding? = null
     private val binding get() = _binding!!
-    lateinit var mView : View
+    lateinit var mView: View
     private var mDelegate = delegate
-    lateinit var mViewModel : ChangePlanPreloadViewModel
-    var mPlanList : MutableList<PlanListVO> ?= null
+    lateinit var mViewModel: ChangePlanPreloadViewModel
+    var mPlanList: MutableList<PlanListVO>? = null
     var mBandWidth = ""
-    var mPlanListVO : PlanListVO ?= null
+    var mPlanListVO: PlanListVO? = null
     var mDesc = ""
 
-    companion object{
-        lateinit var mActivity : MyPlanActivity
-        var mPlanVO : ActivePlanVO ?= null
-        fun newInstance(delegate : ChangePlanDelegate,mContext : MyPlanActivity,mData : ActivePlanVO) : ChangePlanDialog{
+    companion object {
+        lateinit var mActivity: MyPlanActivity
+        var mPlanVO: ActivePlanVO? = null
+        fun newInstance(
+            delegate: ChangePlanDelegate,
+            mContext: MyPlanActivity,
+            mData: ActivePlanVO
+        ): ChangePlanDialog {
             mActivity = mContext
             mPlanVO = mData
             return ChangePlanDialog(delegate)
@@ -56,7 +60,7 @@ class ChangePlanDialog(delegate : ChangePlanDelegate) : BaseDialogFragment(),Cha
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        _binding = DialogChangePlanBinding.inflate(inflater,container,false)
+        _binding = DialogChangePlanBinding.inflate(inflater, container, false)
         mView = binding.root
         createAlertDialog(mView.context)
         binding.apply {
@@ -64,7 +68,7 @@ class ChangePlanDialog(delegate : ChangePlanDelegate) : BaseDialogFragment(),Cha
                 dismiss()
             }
             tvDialogChangePlan.setOnClickListener {
-                mDelegate.onCreateRequest(createPlanRequest(),mDesc)
+                mDelegate.onCreateRequest(createPlanRequest(), mDesc)
                 dismiss()
             }
             lblDialogTitle.text = mPlanVO?.packagename
@@ -85,20 +89,20 @@ class ChangePlanDialog(delegate : ChangePlanDelegate) : BaseDialogFragment(),Cha
 
     }
 
-    fun preloadApiCall(){
+    fun preloadApiCall() {
         val request = ChangePlanPreloadRequest()
         request.activePlanId = mPlanVO?.id
         mViewModel.getChangePlanPreload(request)
     }
 
-    fun planByWidthApiCall(){
+    fun planByWidthApiCall() {
         val request = PlanByBandWidthRequest()
         request.activePlanId = mPlanVO?.id
         request.bandWidth = mBandWidth
         mViewModel.getPlanByBandWidth(request)
     }
 
-    fun createPlanRequest() : ChangePlanRequest{
+    fun createPlanRequest(): ChangePlanRequest {
         val request = ChangePlanRequest()
         request.id = mPlanVO?.id
         request.newplanid = mPlanListVO?.id
@@ -131,29 +135,36 @@ class ChangePlanDialog(delegate : ChangePlanDelegate) : BaseDialogFragment(),Cha
 
     override fun setChangePlanPreload(response: ChangePlanPreloadResponse) {
         dismissProgress()
-        if(response.data != null){
+        if (response.data != null) {
             mDesc = response.data!!.termsAndConditionsDesc.toString()
 
-            if(response.data!!.bandWithList != null){
-                mBandWidthAdapter = BandWidthSpinnerAdapter(mView.context,response.data!!.bandWithList!!)
+            if (response.data!!.bandWithList != null) {
+                mBandWidthAdapter =
+                    BandWidthSpinnerAdapter(mView.context, response.data!!.bandWithList!!)
                 binding.apply {
                     spBandwidth.adapter = mBandWidthAdapter
-                    spBandwidth.onItemSelectedListener = object : AdapterView.OnItemSelectedListener{
-                        override fun onItemSelected(p0: AdapterView<*>?, p1: View?, p2: Int, p3: Long) {
-                            mBandWidth = mBandWidthAdapter.getBandWidthData(p2)
-                            planByWidthApiCall()
+                    spBandwidth.onItemSelectedListener =
+                        object : AdapterView.OnItemSelectedListener {
+                            override fun onItemSelected(
+                                p0: AdapterView<*>?,
+                                p1: View?,
+                                p2: Int,
+                                p3: Long
+                            ) {
+                                mBandWidth = mBandWidthAdapter.getBandWidthData(p2)
+                                planByWidthApiCall()
+                            }
+
+                            override fun onNothingSelected(p0: AdapterView<*>?) {
+
+                            }
+
                         }
-
-                        override fun onNothingSelected(p0: AdapterView<*>?) {
-
-                        }
-
-                    }
                 }
 
             }
 
-            if(response.data!!.planList != null){
+            if (response.data!!.planList != null) {
                 mPlanList = response.data!!.planList
             }
         }
@@ -161,13 +172,18 @@ class ChangePlanDialog(delegate : ChangePlanDelegate) : BaseDialogFragment(),Cha
 
     override fun setPlanByBandWidth(response: PlanByBandWidthResponse) {
         dismissProgress()
-        if(response.data != null){
-            if(response.data!!.planList != null){
-                mPayPerAdapter = PayPerSpinnerAdapter(mView.context,response.data!!.planList!!)
+        if (response.data != null) {
+            if (response.data!!.planList != null) {
+                mPayPerAdapter = PayPerSpinnerAdapter(mView.context, response.data!!.planList!!)
                 binding.apply {
                     spPayPer.adapter = mPayPerAdapter
-                    spPayPer.onItemSelectedListener = object : AdapterView.OnItemSelectedListener{
-                        override fun onItemSelected(p0: AdapterView<*>?, p1: View?, p2: Int, p3: Long) {
+                    spPayPer.onItemSelectedListener = object : AdapterView.OnItemSelectedListener {
+                        override fun onItemSelected(
+                            p0: AdapterView<*>?,
+                            p1: View?,
+                            p2: Int,
+                            p3: Long
+                        ) {
                             mPlanListVO = mPayPerAdapter.getPlanVO(p2)
                             tvAmount.text = mPlanListVO?.totalpriceDesc
                             lblDesc.text = mPlanListVO?.enddate
@@ -191,20 +207,21 @@ class ChangePlanDialog(delegate : ChangePlanDelegate) : BaseDialogFragment(),Cha
 
     override fun showError(message: String, code: String) {
         dismissProgress()
-        DialogUtil(mView.context).showErrorDialog(getString(R.string.errorTitle),message)
-        dismiss()
+        DialogUtil(mView.context).showErrorDialog(getString(R.string.errorTitle), message)
     }
 
     override fun showInvalidSession(message: String, code: String) {
         dismissProgress()
-        mInvalidSession(mActivity = mActivity,message)
+        mInvalidSession(mActivity = mActivity, message)
         dismiss()
     }
 
     override fun showNetworkFailed() {
         dismissProgress()
-        DialogUtil(mView.context).showErrorDialog(getString(R.string.errorTitle), Constants.CONNECTION_FAIL)
-        dismiss()
+        DialogUtil(mView.context).showErrorDialog(
+            getString(R.string.errorTitle),
+            Constants.CONNECTION_FAIL
+        )
     }
 
     private fun showProgress() {

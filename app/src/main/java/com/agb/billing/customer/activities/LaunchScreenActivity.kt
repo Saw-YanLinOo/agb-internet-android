@@ -7,11 +7,13 @@ import com.agb.billing.customer.R
 import com.agb.billing.customer.databinding.ActivitySplashBinding
 import com.agb.billing.customer.localizations.LocaleManager
 import com.agb.billing.customer.modelVO.PaymentNotificationVO
+import com.agb.billing.customer.networks.EndPoints
+import com.agb.billing.customer.utils.Constants
 import com.agb.billing.customer.utils.PreferenceUtils
 
 class LaunchScreenActivity : BaseActivity() {
 
-    lateinit var binding : ActivitySplashBinding
+    lateinit var binding: ActivitySplashBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -21,13 +23,11 @@ class LaunchScreenActivity : BaseActivity() {
         hideStatusBar()
         setContentView(binding.root)
 
-        Handler().postDelayed(object : Runnable{
-            override fun run() {
-                startActivity(LoginActivity.newInstance(this@LaunchScreenActivity))
-                overridePendingTransition(R.anim.left_in, R.anim.left_out)
-                finish()
-            }
+        Handler().postDelayed({
+            startActivity(LoginActivity.newInstance(this@LaunchScreenActivity))
+            overridePendingTransition(R.anim.left_in, R.anim.left_out)
+            finish()
+        }, 3000)
 
-        },3000)
     }
 }

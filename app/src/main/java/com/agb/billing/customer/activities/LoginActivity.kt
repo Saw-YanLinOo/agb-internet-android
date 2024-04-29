@@ -21,17 +21,17 @@ import com.agb.billing.customer.utils.PreferenceUtils
 import com.agb.billing.customer.viewmodels.LoginViewModel
 import com.agb.billing.customer.views.LoginView
 
-class LoginActivity : BaseActivity(),LoginView {
+class LoginActivity : BaseActivity(), LoginView {
 
-    lateinit var binding : ActivityLoginBinding
-    lateinit var mViewModel : LoginViewModel
+    lateinit var binding: ActivityLoginBinding
+    lateinit var mViewModel: LoginViewModel
     var userName = ""
     var passwordStatus = true
-    private var mToken :String? = ""
+    private var mToken: String? = ""
 
-    companion object{
-        fun newInstance(mContext : Context) : Intent {
-            return Intent(mContext,LoginActivity::class.java)
+    companion object {
+        fun newInstance(mContext: Context): Intent {
+            return Intent(mContext, LoginActivity::class.java)
         }
     }
 
@@ -50,7 +50,7 @@ class LoginActivity : BaseActivity(),LoginView {
 
     private fun checkLogin() {
         val dataLogin = PreferenceUtils.getUser()
-        if(dataLogin.sessionId != ""){
+        if (dataLogin.sessionId != "") {
             gotoMainActivity()
         }
     }
@@ -60,7 +60,7 @@ class LoginActivity : BaseActivity(),LoginView {
         mViewModel.setView(this)
     }
 
-    private fun getFirebaseToken(){
+    private fun getFirebaseToken() {
         FirebaseMessaging.getInstance().isAutoInitEnabled = true
         FirebaseMessaging.getInstance().token.addOnCompleteListener(OnCompleteListener { task ->
             if (!task.isSuccessful) {
@@ -75,7 +75,7 @@ class LoginActivity : BaseActivity(),LoginView {
         })
     }
 
-    fun loginApiCall(){
+    fun loginApiCall() {
         showProgress()
         userName = binding.etUsername.text.toString()
         val request = LoginRequest()
@@ -88,11 +88,13 @@ class LoginActivity : BaseActivity(),LoginView {
     private fun clickEvent() {
         binding.apply {
             btnLogin.setOnClickListener {
-                if(binding.etUsername.text.toString().isNotEmpty() && binding.etPassword.text.toString().isNotEmpty()){
+                if (binding.etUsername.text.toString()
+                        .isNotEmpty() && binding.etPassword.text.toString().isNotEmpty()
+                ) {
                     loginApiCall()
-                }else if(binding.etUsername.text.toString().isEmpty()){
+                } else if (binding.etUsername.text.toString().isEmpty()) {
                     binding.etUsername.error = getString(R.string.require)
-                }else{
+                } else {
                     binding.etPassword.error = getString(R.string.require)
                 }
             }
@@ -116,14 +118,13 @@ class LoginActivity : BaseActivity(),LoginView {
         binding.etPassword.transformationMethod = AsteriskPasswordTransformationMethod
     }
 
-    fun gotoMainActivity(){
-        Toast.makeText(this,"Login Success!",Toast.LENGTH_SHORT).show()
+    private fun gotoMainActivity() {
         startActivity(MainActivity.newInstance(this@LoginActivity))
         overridePendingTransition(R.anim.push_up_in, R.anim.push_up_out)
     }
 
-    fun gotoConfirmPasswordActivity(){
-        startActivity(ConfirmPasswordActivity.newInstance(this@LoginActivity,userName))
+    private fun gotoConfirmPasswordActivity() {
+        startActivity(ConfirmPasswordActivity.newInstance(this@LoginActivity, userName))
         overridePendingTransition(R.anim.left_in, R.anim.left_out)
         finish()
     }
@@ -135,18 +136,18 @@ class LoginActivity : BaseActivity(),LoginView {
     }
 
     override fun showError(message: String, code: String) {
-        Log.e("LOGIN_ERROR","$code-----$message")
+        Log.e("LOGIN_ERROR", "$code-----$message")
         dismissProgress()
-        if(code == Constants.FIRST_TIME_LOGIN_CODE){
+        if (code == Constants.FIRST_TIME_LOGIN_CODE) {
             gotoConfirmPasswordActivity()
-        }else {
+        } else {
             DialogUtil(this).showErrorDialog(getString(R.string.errorTitle), message)
         }
     }
 
     override fun showInvalidSession(message: String, code: String) {
         dismissProgress()
-        mInvalidSession(this,message)
+        mInvalidSession(this, message)
     }
 
     override fun showNetworkFailed() {
@@ -157,7 +158,7 @@ class LoginActivity : BaseActivity(),LoginView {
     private fun showProgress() {
         try {
             showProgressDialog?.show()
-        } catch (ex: Exception) {
+        } catch (_: Exception) {
 
         }
 
@@ -166,7 +167,7 @@ class LoginActivity : BaseActivity(),LoginView {
     private fun dismissProgress() {
         try {
             showProgressDialog?.dismiss()
-        } catch (ex: Exception) {
+        } catch (_: Exception) {
 
         }
     }

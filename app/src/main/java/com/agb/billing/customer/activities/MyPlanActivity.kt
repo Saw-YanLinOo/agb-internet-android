@@ -3,7 +3,6 @@ package com.agb.billing.customer.activities
 import android.content.Context
 import android.content.Intent
 import android.os.Bundle
-import com.agb.billing.customer.activities.BaseActivity
 import com.agb.billing.customer.R
 import com.agb.billing.customer.adapter.MyPlanVPAdapter
 import com.agb.billing.customer.databinding.ActivityPlansBinding
@@ -47,7 +46,7 @@ class MyPlanActivity : BaseActivity() {
     }
 
     fun gotoActivePlan(){
-        mAdapter.getActivePlanFragment().onrefreshList()
+        mAdapter.getActivePlanFragment().onRefreshList()
         binding.vpPlan.currentItem = 0
     }
 

@@ -44,7 +44,7 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/tv_choose_payment"
-            app:spanCount="3"
+            app:spanCount="2"
             tools:listitem="@layout/item_payment_view_holder" />
 
 

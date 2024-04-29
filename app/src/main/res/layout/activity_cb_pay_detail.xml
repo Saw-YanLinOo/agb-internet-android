@@ -8,7 +8,7 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/ly_header"
         android:layout_width="match_parent"
-        android:layout_height="?attr/actionBarSize"
+        android:layout_height="wrap_content"
         android:background="@color/colorPrimary"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -18,6 +18,8 @@
             android:id="@+id/iv_logo"
             android:layout_width="wrap_content"
             android:layout_height="?attr/actionBarSize"
+            android:layout_marginTop="@dimen/margin_2x"
+            android:layout_marginBottom="@dimen/margin_2x"
             android:src="@drawable/logo_3"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
@@ -66,13 +68,13 @@
                 style="@style/CustomFont_Normal_Black"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/margin_4x"
                 android:layout_marginTop="@dimen/margin_3x"
-                android:textAlignment="textStart"
                 android:layout_marginEnd="@dimen/margin_2x"
                 android:text="@string/lbl_invoice_number"
-                android:layout_marginStart="@dimen/margin_4x"
-                app:layout_constraintStart_toStartOf="parent"
+                android:textAlignment="textStart"
                 app:layout_constraintEnd_toStartOf="@id/guideline"
+                app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
 
             <androidx.appcompat.widget.AppCompatTextView
@@ -90,25 +92,25 @@
                 style="@style/CustomFont_Normal_Black"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_marginEnd="@dimen/margin_3x"
-                tools:text="20210001001"
-                android:textIsSelectable="true"
                 android:layout_marginStart="@dimen/margin_2x"
+                android:layout_marginEnd="@dimen/margin_3x"
+                android:textIsSelectable="true"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toEndOf="@id/lbl_invoice_id_dot"
-                app:layout_constraintTop_toTopOf="@id/lbl_invoice_id" />
+                app:layout_constraintTop_toTopOf="@id/lbl_invoice_id"
+                tools:text="20210001001" />
 
             <androidx.appcompat.widget.AppCompatTextView
                 android:id="@+id/lbl_product"
                 style="@style/CustomFont_Normal_Black"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="@dimen/margin_2x"
-                android:text="@string/lbl_service_id"
-                android:layout_marginEnd="@dimen/margin_2x"
                 android:layout_marginStart="@dimen/margin_4x"
-                app:layout_constraintStart_toStartOf="parent"
+                android:layout_marginTop="@dimen/margin_2x"
+                android:layout_marginEnd="@dimen/margin_2x"
+                android:text="@string/lbl_service_id"
                 app:layout_constraintEnd_toStartOf="@id/guideline"
+                app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/lbl_invoice_id" />
 
             <androidx.appcompat.widget.AppCompatTextView
@@ -126,25 +128,25 @@
                 style="@style/CustomFont_Normal_Black"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_marginEnd="@dimen/margin_3x"
-                tools:text="SS-0001"
                 android:layout_marginStart="@dimen/margin_2x"
+                android:layout_marginEnd="@dimen/margin_3x"
                 android:textIsSelectable="true"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toEndOf="@id/lbl_service_id_dot"
-                app:layout_constraintTop_toTopOf="@id/lbl_product" />
+                app:layout_constraintTop_toTopOf="@id/lbl_product"
+                tools:text="SS-0001" />
 
             <androidx.appcompat.widget.AppCompatTextView
                 android:id="@+id/lbl_due_date"
                 style="@style/CustomFont_Normal_Black"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="@dimen/margin_2x"
-                android:text="@string/lbl_invoice_amount"
-                android:layout_marginEnd="@dimen/margin_2x"
                 android:layout_marginStart="@dimen/margin_4x"
-                app:layout_constraintStart_toStartOf="parent"
+                android:layout_marginTop="@dimen/margin_2x"
+                android:layout_marginEnd="@dimen/margin_2x"
+                android:text="@string/lbl_invoice_amount"
                 app:layout_constraintEnd_toStartOf="@id/guideline"
+                app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/lbl_product" />
 
             <androidx.appcompat.widget.AppCompatTextView
@@ -162,25 +164,25 @@
                 style="@style/CustomFont_Normal_Black"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_marginEnd="@dimen/margin_3x"
-                tools:text="1000 Ks"
-                android:textIsSelectable="true"
                 android:layout_marginStart="@dimen/margin_2x"
+                android:layout_marginEnd="@dimen/margin_3x"
+                android:textIsSelectable="true"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toEndOf="@id/lbl_due_date_dot"
-                app:layout_constraintTop_toTopOf="@id/lbl_due_date" />
+                app:layout_constraintTop_toTopOf="@id/lbl_due_date"
+                tools:text="1000 Ks" />
 
             <androidx.appcompat.widget.AppCompatTextView
                 android:id="@+id/lbl_reference_no"
                 style="@style/CustomFont_Normal_Black"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="@dimen/margin_2x"
-                android:text="@string/lbl_reference_no"
-                android:layout_marginEnd="@dimen/margin_2x"
                 android:layout_marginStart="@dimen/margin_4x"
-                app:layout_constraintStart_toStartOf="parent"
+                android:layout_marginTop="@dimen/margin_2x"
+                android:layout_marginEnd="@dimen/margin_2x"
+                android:text="@string/lbl_reference_no"
                 app:layout_constraintEnd_toStartOf="@id/guideline"
+                app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/lbl_due_date" />
 
             <androidx.appcompat.widget.AppCompatTextView
@@ -198,13 +200,13 @@
                 style="@style/CustomFont_Normal_Black"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_marginEnd="@dimen/margin_3x"
-                tools:text="2003300"
                 android:layout_marginStart="@dimen/margin_2x"
+                android:layout_marginEnd="@dimen/margin_3x"
                 android:textIsSelectable="true"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toEndOf="@id/lbl_due_date_dot"
-                app:layout_constraintTop_toTopOf="@id/lbl_reference_no" />
+                app:layout_constraintTop_toTopOf="@id/lbl_reference_no"
+                tools:text="2003300" />
 
 
             <androidx.appcompat.widget.AppCompatImageView

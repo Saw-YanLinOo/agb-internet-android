@@ -1,252 +1,241 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:focusable="true"
-    android:focusableInTouchMode="true"
     android:background="@android:color/transparent"
-    xmlns:app="http://schemas.android.com/apk/res-auto">
+    android:focusable="true"
+    android:focusableInTouchMode="true">
 
-        <com.google.android.material.card.MaterialCardView
-            android:id="@+id/cv_support"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="@dimen/margin_3x"
-            android:layout_marginTop="@dimen/margin_3x"
-            android:layout_marginEnd="@dimen/margin_3x"
-            app:cardCornerRadius="@dimen/margin_1x"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent">
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/cv_support"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/margin_3x"
+        android:layout_marginTop="@dimen/margin_3x"
+        android:layout_marginEnd="@dimen/margin_3x"
+        app:cardCornerRadius="@dimen/margin_1x"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
 
-            <androidx.constraintlayout.widget.ConstraintLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content">
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
 
-                <androidx.appcompat.widget.AppCompatTextView
-                    android:id="@+id/lbl_title"
-                    style="@style/CustomFont_Title_Black"
-                    android:layout_width="@dimen/size_105"
-                    android:layout_height="wrap_content"
-                    android:layout_margin="@dimen/margin_3x"
-                    android:background="@color/shimmerColor"
-                    android:textStyle="bold"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent" />
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/lbl_title"
+                style="@style/CustomFont_Title_Black"
+                android:layout_width="@dimen/size_105"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/margin_3x"
+                android:background="@color/shimmerColor"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
 
-                <View
-                    android:id="@+id/vw_title"
-                    android:layout_width="0dp"
-                    android:layout_height="@dimen/margin_half"
-                    android:layout_marginStart="@dimen/margin_2"
-                    android:layout_marginTop="@dimen/margin_3x"
-                    android:layout_marginEnd="@dimen/margin_2"
-                    android:background="@color/colorGray"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@id/lbl_title" />
-
-
-                <androidx.appcompat.widget.AppCompatTextView
-                    android:id="@+id/lbl_mail"
-                    android:layout_width="@dimen/size_20"
-                    android:layout_height="@dimen/size_20"
-                    style="@style/CustomFont_Normal_Black"
-                    android:textStyle="bold"
-                    android:textColor="@color/colorBlack_1x"
-                    android:background="@color/shimmerColor"
-                    android:layout_marginTop="@dimen/margin_3x"
-                    android:layout_marginStart="@dimen/margin_3x"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@id/vw_title"
-                    />
-                <androidx.appcompat.widget.AppCompatTextView
-                    android:id="@+id/lbl_mail_dot"
-                    android:layout_width="@dimen/size_105"
-                    android:layout_height="0dp"
-                    style="@style/CustomFont_Normal_Black"
-                    android:textStyle="bold"
-                    android:textColor="@color/colorBlack_1x"
-                    android:background="@color/shimmerColor"
-                    android:layout_marginStart="@dimen/margin_2x"
-                    app:layout_constraintTop_toTopOf="@id/lbl_mail"
-                    app:layout_constraintBottom_toBottomOf="@id/lbl_mail"
-                    app:layout_constraintStart_toEndOf="@id/lbl_mail"
-                    />
+            <View
+                android:id="@+id/vw_title"
+                android:layout_width="0dp"
+                android:layout_height="@dimen/margin_half"
+                android:layout_marginStart="@dimen/margin_2"
+                android:layout_marginTop="@dimen/margin_3x"
+                android:layout_marginEnd="@dimen/margin_2"
+                android:background="@color/colorGray"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/lbl_title" />
 
 
-                <androidx.appcompat.widget.AppCompatTextView
-                    android:id="@+id/tv_mail"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    style="@style/CustomFont_Small_Black"
-                    android:background="@color/shimmerColor"
-                    android:textColor="@color/colorBlack_1x"
-                    android:layout_marginTop="@dimen/margin_2x"
-                    android:layout_marginStart="@dimen/margin_3x"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@id/lbl_mail"
-                    />
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/lbl_mail"
+                style="@style/CustomFont_Normal_Black"
+                android:layout_width="@dimen/size_20"
+                android:layout_height="@dimen/size_20"
+                android:layout_marginStart="@dimen/margin_3x"
+                android:layout_marginTop="@dimen/margin_3x"
+                android:background="@color/shimmerColor"
+                android:textColor="@color/colorBlack_1x"
+                android:textStyle="bold"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/vw_title" />
 
-                <View
-                    android:id="@+id/vw_mail"
-                    android:layout_width="0dp"
-                    android:layout_height="@dimen/margin_half"
-                    android:layout_marginStart="@dimen/margin_2"
-                    android:layout_marginTop="@dimen/margin_3x"
-                    android:layout_marginEnd="@dimen/margin_2"
-                    android:background="@color/colorGray"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@id/tv_mail" />
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/lbl_mail_dot"
+                style="@style/CustomFont_Normal_Black"
+                android:layout_width="@dimen/size_105"
+                android:layout_height="0dp"
+                android:layout_marginStart="@dimen/margin_2x"
+                android:background="@color/shimmerColor"
+                android:textColor="@color/colorBlack_1x"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toBottomOf="@id/lbl_mail"
+                app:layout_constraintStart_toEndOf="@id/lbl_mail"
+                app:layout_constraintTop_toTopOf="@id/lbl_mail" />
 
-                <androidx.appcompat.widget.AppCompatTextView
-                    android:id="@+id/lbl_phone"
-                    android:layout_width="@dimen/size_20"
-                    android:layout_height="@dimen/size_20"
-                    style="@style/CustomFont_Normal_Black"
-                    android:textStyle="bold"
-                    android:textColor="@color/colorBlack_1x"
-                    android:background="@color/shimmerColor"
-                    android:layout_marginTop="@dimen/margin_3x"
-                    android:layout_marginStart="@dimen/margin_3x"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@id/vw_mail"
-                    />
 
-                <androidx.appcompat.widget.AppCompatTextView
-                    android:id="@+id/lbl_phone_dot"
-                    android:layout_width="@dimen/size_105"
-                    android:layout_height="0dp"
-                    style="@style/CustomFont_Normal_Black"
-                    android:textStyle="bold"
-                    android:textColor="@color/colorBlack_1x"
-                    android:background="@color/shimmerColor"
-                    android:layout_marginStart="@dimen/margin_2x"
-                    app:layout_constraintTop_toTopOf="@id/lbl_phone"
-                    app:layout_constraintBottom_toBottomOf="@id/lbl_phone"
-                    app:layout_constraintStart_toEndOf="@id/lbl_phone"
-                    />
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tv_mail"
+                style="@style/CustomFont_Small_Black"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/margin_3x"
+                android:layout_marginTop="@dimen/margin_2x"
+                android:background="@color/shimmerColor"
+                android:textColor="@color/colorBlack_1x"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/lbl_mail" />
 
-                <androidx.appcompat.widget.AppCompatTextView
-                    android:id="@+id/tv_phone1"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    style="@style/CustomFont_Small_Black"
-                    android:background="@color/shimmerColor"
-                    android:textColor="@color/colorBlack_1x"
-                    android:layout_marginTop="@dimen/margin_2x"
-                    android:layout_marginStart="@dimen/margin_3x"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@id/lbl_phone"
-                    />
+            <View
+                android:id="@+id/vw_mail"
+                android:layout_width="0dp"
+                android:layout_height="@dimen/margin_half"
+                android:layout_marginStart="@dimen/margin_2"
+                android:layout_marginTop="@dimen/margin_3x"
+                android:layout_marginEnd="@dimen/margin_2"
+                android:background="@color/colorGray"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tv_mail" />
 
-                <androidx.appcompat.widget.AppCompatTextView
-                    android:id="@+id/tv_phone2"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    style="@style/CustomFont_Small_Black"
-                    android:background="@color/shimmerColor"
-                    android:textColor="@color/colorBlack_1x"
-                    android:layout_marginTop="@dimen/margin_1x"
-                    android:layout_marginStart="@dimen/margin_3x"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@id/tv_phone1"
-                    />
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/lbl_phone"
+                style="@style/CustomFont_Normal_Black"
+                android:layout_width="@dimen/size_20"
+                android:layout_height="@dimen/size_20"
+                android:layout_marginStart="@dimen/margin_3x"
+                android:layout_marginTop="@dimen/margin_3x"
+                android:background="@color/shimmerColor"
+                android:textColor="@color/colorBlack_1x"
+                android:textStyle="bold"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/vw_mail" />
 
-                <View
-                    android:id="@+id/vw_phone"
-                    android:layout_width="0dp"
-                    android:layout_height="@dimen/margin_half"
-                    android:layout_marginStart="@dimen/margin_2"
-                    android:layout_marginTop="@dimen/margin_3x"
-                    android:layout_marginEnd="@dimen/margin_2"
-                    android:background="@color/colorGray"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@id/tv_phone2" />
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/lbl_phone_dot"
+                style="@style/CustomFont_Normal_Black"
+                android:layout_width="@dimen/size_105"
+                android:layout_height="0dp"
+                android:layout_marginStart="@dimen/margin_2x"
+                android:background="@color/shimmerColor"
+                android:textColor="@color/colorBlack_1x"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toBottomOf="@id/lbl_phone"
+                app:layout_constraintStart_toEndOf="@id/lbl_phone"
+                app:layout_constraintTop_toTopOf="@id/lbl_phone" />
 
-                <androidx.appcompat.widget.AppCompatTextView
-                    android:id="@+id/lbl_address"
-                    android:layout_width="@dimen/size_20"
-                    android:layout_height="@dimen/size_20"
-                    style="@style/CustomFont_Normal_Black"
-                    android:textStyle="bold"
-                    android:textColor="@color/colorBlack_1x"
-                    android:background="@color/shimmerColor"
-                    android:gravity="center_vertical"
-                    android:layout_marginTop="@dimen/margin_3x"
-                    android:layout_marginStart="@dimen/margin_3x"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@id/vw_phone"
-                    />
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tv_phone1"
+                style="@style/CustomFont_Small_Black"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/margin_3x"
+                android:layout_marginTop="@dimen/margin_2x"
+                android:background="@color/shimmerColor"
+                android:textColor="@color/colorBlack_1x"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/lbl_phone" />
 
-                <androidx.appcompat.widget.AppCompatTextView
-                    android:id="@+id/lbl_address_dot"
-                    android:layout_width="@dimen/size_105"
-                    android:layout_height="0dp"
-                    style="@style/CustomFont_Normal_Black"
-                    android:textStyle="bold"
-                    android:textColor="@color/colorBlack_1x"
-                    android:background="@color/shimmerColor"
-                    android:layout_marginStart="@dimen/margin_2x"
-                    app:layout_constraintTop_toTopOf="@id/lbl_address"
-                    app:layout_constraintBottom_toBottomOf="@id/lbl_address"
-                    app:layout_constraintStart_toEndOf="@id/lbl_address"
-                    />
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tv_phone2"
+                style="@style/CustomFont_Small_Black"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/margin_3x"
+                android:layout_marginTop="@dimen/margin_1x"
+                android:background="@color/shimmerColor"
+                android:textColor="@color/colorBlack_1x"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tv_phone1" />
 
-                <androidx.appcompat.widget.AppCompatTextView
-                    android:id="@+id/tv_address"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    style="@style/CustomFont_Small_Black"
-                    android:background="@color/shimmerColor"
-                    android:textColor="@color/colorBlack_1x"
-                    android:layout_marginTop="@dimen/margin_2x"
-                    android:layout_marginStart="@dimen/margin_3x"
-                    android:layout_marginBottom="@dimen/margin_3x"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@id/lbl_address"
-                    />
+            <View
+                android:id="@+id/vw_phone"
+                android:layout_width="0dp"
+                android:layout_height="@dimen/margin_half"
+                android:layout_marginStart="@dimen/margin_2"
+                android:layout_marginTop="@dimen/margin_3x"
+                android:layout_marginEnd="@dimen/margin_2"
+                android:background="@color/colorGray"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tv_phone2" />
 
-                <androidx.appcompat.widget.AppCompatTextView
-                    android:id="@+id/tv_address1"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    style="@style/CustomFont_Small_Black"
-                    android:background="@color/shimmerColor"
-                    android:textColor="@color/colorBlack_1x"
-                    android:layout_marginTop="@dimen/margin_1x"
-                    android:layout_marginStart="@dimen/margin_3x"
-                    android:layout_marginBottom="@dimen/margin_3x"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@id/tv_address"
-                    />
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/lbl_address"
+                style="@style/CustomFont_Normal_Black"
+                android:layout_width="@dimen/size_20"
+                android:layout_height="@dimen/size_20"
+                android:layout_marginStart="@dimen/margin_3x"
+                android:layout_marginTop="@dimen/margin_3x"
+                android:background="@color/shimmerColor"
+                android:gravity="center_vertical"
+                android:textColor="@color/colorBlack_1x"
+                android:textStyle="bold"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/vw_phone" />
 
-                <androidx.appcompat.widget.AppCompatTextView
-                    android:id="@+id/tv_address2"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    style="@style/CustomFont_Small_Black"
-                    android:background="@color/shimmerColor"
-                    android:textColor="@color/colorBlack_1x"
-                    android:layout_marginTop="@dimen/margin_1x"
-                    android:layout_marginStart="@dimen/margin_3x"
-                    android:layout_marginBottom="@dimen/margin_3x"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@id/tv_address1"
-                    />
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/lbl_address_dot"
+                style="@style/CustomFont_Normal_Black"
+                android:layout_width="@dimen/size_105"
+                android:layout_height="0dp"
+                android:layout_marginStart="@dimen/margin_2x"
+                android:background="@color/shimmerColor"
+                android:textColor="@color/colorBlack_1x"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toBottomOf="@id/lbl_address"
+                app:layout_constraintStart_toEndOf="@id/lbl_address"
+                app:layout_constraintTop_toTopOf="@id/lbl_address" />
 
-            </androidx.constraintlayout.widget.ConstraintLayout>
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tv_address"
+                style="@style/CustomFont_Small_Black"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/margin_3x"
+                android:layout_marginTop="@dimen/margin_2x"
+                android:layout_marginBottom="@dimen/margin_3x"
+                android:background="@color/shimmerColor"
+                android:textColor="@color/colorBlack_1x"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/lbl_address" />
 
-        </com.google.android.material.card.MaterialCardView>
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tv_address1"
+                style="@style/CustomFont_Small_Black"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/margin_3x"
+                android:layout_marginTop="@dimen/margin_1x"
+                android:layout_marginBottom="@dimen/margin_3x"
+                android:background="@color/shimmerColor"
+                android:textColor="@color/colorBlack_1x"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tv_address" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tv_address2"
+                style="@style/CustomFont_Small_Black"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/margin_3x"
+                android:layout_marginTop="@dimen/margin_1x"
+                android:layout_marginBottom="@dimen/margin_3x"
+                android:background="@color/shimmerColor"
+                android:textColor="@color/colorBlack_1x"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tv_address1" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </com.google.android.material.card.MaterialCardView>
 </androidx.constraintlayout.widget.ConstraintLayout>

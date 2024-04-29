@@ -2,6 +2,7 @@ package com.agb.billing.customer.activities
 
 import android.content.Context
 import android.content.Intent
+import android.graphics.Color
 import android.os.Bundle
 import android.view.View
 import androidx.lifecycle.ViewModelProvider
@@ -18,7 +19,7 @@ import com.agb.billing.customer.utils.PreferenceUtils
 import com.agb.billing.customer.viewmodels.ComplainListViewModel
 import com.agb.billing.customer.views.ComplainListView
 
-class ComplainHistoryActivity : BaseActivity(), ComplainDelegate ,ComplainListView{
+class ComplainHistoryActivity : BaseActivity(), ComplainDelegate, ComplainListView {
 
     lateinit var binding: ActivityComplainHistoryBinding
     private var complainList: MutableList<ComplainVO> = mutableListOf()
@@ -94,7 +95,7 @@ class ComplainHistoryActivity : BaseActivity(), ComplainDelegate ,ComplainListVi
     }
 
     override fun onTapComplain(data: ComplainVO) {
-        startActivity(ComplainActivity.newInstance(this@ComplainHistoryActivity,data))
+        startActivity(ComplainActivity.newInstance(this@ComplainHistoryActivity, data))
         overridePendingTransition(R.anim.left_in, R.anim.left_out)
     }
 
@@ -102,11 +103,9 @@ class ComplainHistoryActivity : BaseActivity(), ComplainDelegate ,ComplainListVi
         binding.apply {
             if (b) {
                 shimmerLoading.stopShimmer()
-                cvComplain.visibility = View.VISIBLE
                 shimmerLoading.visibility = View.GONE
             } else {
                 shimmerLoading.startShimmer()
-                cvComplain.visibility = View.GONE
                 shimmerLoading.visibility = View.VISIBLE
             }
         }
@@ -132,6 +131,7 @@ class ComplainHistoryActivity : BaseActivity(), ComplainDelegate ,ComplainListVi
             shimmerLoading.stopShimmer()
             shimmerLoading.visibility = View.GONE
             rvComplain.visibility = View.GONE
+            lyError.layoutError.setBackgroundColor(Color.WHITE)
             lyError.layoutError.visibility = View.VISIBLE
         }
     }
@@ -141,9 +141,10 @@ class ComplainHistoryActivity : BaseActivity(), ComplainDelegate ,ComplainListVi
             shimmerLoading.stopShimmer()
             shimmerLoading.visibility = View.GONE
             rvComplain.visibility = View.GONE
-            lyError.layoutError.visibility = View.VISIBLE
+            lyError.layoutError.setBackgroundColor(Color.WHITE)
             lyError.ivError.setImageResource(R.drawable.ic_home_complain)
             lyError.tvError.text = resources.getString(R.string.error_complain)
+            lyError.layoutError.visibility = View.VISIBLE
         }
     }
 
