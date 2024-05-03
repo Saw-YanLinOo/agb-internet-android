@@ -25,8 +25,8 @@ class LoginActivity : BaseActivity(), LoginView {
 
     lateinit var binding: ActivityLoginBinding
     lateinit var mViewModel: LoginViewModel
-    var userName = ""
-    var passwordStatus = true
+    private var userName = ""
+    private var passwordStatus = true
     private var mToken: String? = ""
 
     companion object {

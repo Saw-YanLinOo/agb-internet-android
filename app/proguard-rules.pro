@@ -31,3 +31,41 @@
 -keep class com.agb.billing.customer.networks.requests.** { *; }
 -keep class com.agb.billing.customer.networks.responses.** { *; }
 -keep class com.agb.billing.customer.modelVO.** { *; }
+
+# Retofit
+-keep class com.squareup.** { *; }
+-keep interface com.squareup.** { *; }
+-keep class retrofit2.** { *; }
+-keep interface retrofit2.** { *;}
+-keep interface com.squareup.** { *; }
+-keepclasseswithmembers class * {
+    @retrofit2.http.* <methods>;
+}
+
+-keep class androidx.core.app.NotificationCompat { *; }
+-keep class android.support.v4.app.NotificationCompat$* { *; }
+-keep class androidx.core.app.NotificationManagerCompat { *; }
+
+-keep class io.invertase.firebase.** { *; }
+-keep class io.invertase.firebase.messaging.** { *; }
+-keep class com.google.firebase.** { *; }
+-keep class com.google.gson.stream.** { *; }
+-keep class com.google.gson.** { *; }
+
+# eventBus
+-keepclassmembers class ** {
+    @org.greenrobot.eventbus.Subscribe <methods>;
+ }
+-keep enum org.greenrobot.eventbus.ThreadMode { *; }
+
+# Please add these rules to your existing keep rules in order to suppress warnings.
+# This is generated automatically by the Android Gradle plugin.
+-dontwarn org.bouncycastle.jsse.BCSSLParameters
+-dontwarn org.bouncycastle.jsse.BCSSLSocket
+-dontwarn org.bouncycastle.jsse.provider.BouncyCastleJsseProvider
+-dontwarn org.conscrypt.Conscrypt$Version
+-dontwarn org.conscrypt.Conscrypt
+-dontwarn org.conscrypt.ConscryptHostnameVerifier
+-dontwarn org.openjsse.javax.net.ssl.SSLParameters
+-dontwarn org.openjsse.javax.net.ssl.SSLSocket
+-dontwarn org.openjsse.net.ssl.OpenJSSE

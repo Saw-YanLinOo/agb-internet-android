@@ -166,23 +166,23 @@ class ProfileActivity : BaseActivity(), ProfileView {
                 tvMembershipId.text = response.data?.memberid
 
                 if (response.data?.viberno.isNullOrEmpty()) {
-                    tvViberNo.setText("-")
+                    tvViberNo.setText("")
                 }
 
                 if (response.data?.email.isNullOrEmpty()) {
-                    tvEmail.setText("-")
+                    tvEmail.setText("")
                 }
 
                 if (response.data?.memberid.isNullOrEmpty()) {
-                    tvMembershipId.text = "-"
+                    tvMembershipId.text = ""
                 }
 
                 if (response.data?.activationdate.isNullOrEmpty()) {
-                    tvActivationDate.text = "-"
+                    tvActivationDate.text = ""
                 }
 
                 if (response.data?.alter_phnumbers.isNullOrEmpty()) {
-                    tvAltPhone.setText("-")
+                    tvAltPhone.setText("")
                 }
             }
 
