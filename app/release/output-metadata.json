@@ -4,7 +4,7 @@
     "type": "APK",
     "kind": "Directory"
   },
-  "applicationId": "com.agb.billing.customer",
+  "applicationId": "com.agb.customer.billing",
   "variantName": "release",
   "elements": [
     {
@@ -12,8 +12,8 @@
       "filters": [],
       "attributes": [],
       "versionCode": 7,
-      "versionName": "1.6",
-      "outputFile": "AGB Internet_020524_1405_release_1.6.apk"
+      "versionName": "1.7",
+      "outputFile": "AGB Internet_020524_1405_release_1.7.apk"
     }
   ],
   "elementType": "File"

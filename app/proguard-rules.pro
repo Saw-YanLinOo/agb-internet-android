@@ -28,9 +28,9 @@
 }
 
 # models
--keep class com.agb.billing.customer.networks.requests.** { *; }
--keep class com.agb.billing.customer.networks.responses.** { *; }
--keep class com.agb.billing.customer.modelVO.** { *; }
+-keep class com.agb.customer.billing.networks.requests.** { *; }
+-keep class com.agb.customer.billing.networks.responses.** { *; }
+-keep class com.agb.customer.billing.modelVO.** { *; }
 
 # Retofit
 -keep class com.squareup.** { *; }

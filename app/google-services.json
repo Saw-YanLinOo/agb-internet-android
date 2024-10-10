@@ -76,6 +76,42 @@
           ]
         }
       }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:943601421784:android:41eb8020538d675b09b6ad",
+        "android_client_info": {
+          "package_name": "com.agb.customer.billing"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "943601421784-c80dp9ivou6dforhujb041j74fj306pd.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD2-PIyuYQ-eWA05ugGwcEA6ZRDiVGNDr8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "943601421784-c80dp9ivou6dforhujb041j74fj306pd.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "943601421784-25fk9eanjvidpp6hf8f66ic300id2qjc.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.agb.billing"
+              }
+            }
+          ]
+        }
+      }
     }
   ],
   "configuration_version": "1"
