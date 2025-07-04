@@ -4,6 +4,7 @@ import android.content.Context
 import android.content.SharedPreferences
 import com.agb.customer.billing.modelVO.PaymentNotificationVO
 import com.agb.customer.billing.modelVO.UserVO
+import com.agb.customer.billing.networks.EndPoints
 import com.google.gson.Gson
 
 object PreferenceUtils {
@@ -11,6 +12,8 @@ object PreferenceUtils {
     private const val PREFERENCE_USER = "user"
     private const val LANGUAGE = "language_key"
     private const val NOTIFICATION = "notification"
+    private const val ACTIVE_BASE_URL = "active_base_url"
+
     private var mAppContext: Context? = null
 
     fun init(appContext: Context?) {
@@ -59,5 +62,16 @@ object PreferenceUtils {
         } else {
             Gson().fromJson(loginData, PaymentNotificationVO::class.java)
         }
+    }
+
+    fun setBaseUrl(url: String){
+        val editor = sharedPreferences().edit()
+        editor.putString(ACTIVE_BASE_URL,url).apply()
+    }
+
+    fun getBaseUrl(): String? {
+        val baseURL = sharedPreferences().getString(ACTIVE_BASE_URL, null)
+        return baseURL
+
     }
 }

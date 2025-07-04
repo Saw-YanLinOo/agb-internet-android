@@ -22,7 +22,7 @@ class RestClient {
         logging.level = HttpLoggingInterceptor.Level.BODY
 
         val okHttpClient = OkHttpClient.Builder()
-
+            .addInterceptor(HeaderInterceptor())
             .readTimeout(30, TimeUnit.SECONDS)
             .connectTimeout(30, TimeUnit.SECONDS)
         okHttpClient.addInterceptor(logging)
@@ -41,7 +41,7 @@ class RestClient {
             .create()
 
         val retrofit = Retrofit.Builder()
-            .baseUrl(EndPoints.BASE_URL)
+            .baseUrl(getCurrentBaseUrl())
             .addConverterFactory(GsonConverterFactory.create(gson))
             .client(okHttpClient.build())
             .build()
@@ -52,33 +52,52 @@ class RestClient {
 
     companion object {
 
-        private fun getRetrofit(): Retrofit {
+        @Volatile
+        private var INSTANCE: RestClient? = null
 
-            val logging = HttpLoggingInterceptor()
-            logging.level = HttpLoggingInterceptor.Level.BODY
-            val okHttpClient = OkHttpClient.Builder()
-            okHttpClient.addInterceptor(HeaderInterceptor())
-                .readTimeout(30, TimeUnit.SECONDS)
-                .connectTimeout(30, TimeUnit.SECONDS)
-            okHttpClient.addInterceptor(logging)
-
-            return Retrofit.Builder()
-                .addConverterFactory(
-                    GsonConverterFactory.create()
-                )
-                .client(okHttpClient.build())
-                .baseUrl(EndPoints.BASE_URL)
-                .build()
+        private fun getCurrentBaseUrl(): String {
+            return PreferenceUtils.getBaseUrl() ?: EndPoints.BASE_URL_EXTRA
         }
 
-        private fun getApiData(): Retrofit {
-            return getRetrofit()
+        fun updateBaseUrl(newBaseUrl: String) {
+            // Force recreation of the RestClient instance with new base URL
+            INSTANCE = null
         }
 
         fun getApiService(): ApiServices {
-            val retrofitCall = getApiData()
-            return retrofitCall.create(ApiServices::class.java)
+            return INSTANCE?.apiServices ?: synchronized(this) {
+                INSTANCE?.apiServices ?: run {
+                    INSTANCE = RestClient()
+                    INSTANCE!!.apiServices
+                }
+            }
         }
+
+//        private fun getRetrofit(): Retrofit {
+//
+//            val logging = HttpLoggingInterceptor()
+//            logging.level = HttpLoggingInterceptor.Level.BODY
+//            val okHttpClient = OkHttpClient.Builder()
+//            okHttpClient.addInterceptor(HeaderInterceptor())
+//                .readTimeout(30, TimeUnit.SECONDS)
+//                .connectTimeout(30, TimeUnit.SECONDS)
+//            okHttpClient.addInterceptor(logging)
+//
+//            return Retrofit.Builder()
+//                .addConverterFactory(
+//                    GsonConverterFactory.create()
+//                )
+//                .client(okHttpClient.build())
+//                .baseUrl(getCurrentBaseUrl())
+//                .build()
+//        }
+//        private fun getApiData(): Retrofit {
+//            return getRetrofit()
+//        }
+//        fun getApiService(): ApiServices {
+//            val retrofitCall = getApiData()
+//            return retrofitCall.create(ApiServices::class.java)
+//        }
 
     }
 

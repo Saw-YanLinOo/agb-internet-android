@@ -11,7 +11,7 @@ if (keystorePropertiesFile.exists()) {
 }
 
 android {
-    compileSdk 34
+    compileSdk 35
 
     buildFeatures {
         viewBinding = true
@@ -24,8 +24,8 @@ android {
     defaultConfig {
         applicationId "com.agb.customer.billing"
         minSdk 21
-        targetSdk 34
-        versionCode 9
+        targetSdk 35
+        versionCode 10
         versionName "1.6"
 
         resConfigs "en", "my"

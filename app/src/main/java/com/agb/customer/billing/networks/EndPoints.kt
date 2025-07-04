@@ -20,7 +20,8 @@ object EndPoints {
 //    const val BASE_URL = "https://app.agbcommunication.com/api/api/"
 
     // Testing URL
-    const val BASE_URL = "http://app.agb.com.mm/api/api/"
+    const val BASE_URL = "http://app.agbcommunication.com/api/api/"
+    const val BASE_URL_EXTRA = "http://app.agb.com.mm/api/api/"
 
     var BASE_TICKET_URL = ""
 
