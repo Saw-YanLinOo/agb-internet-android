@@ -86,6 +86,12 @@ class LoginViewModel : BaseViewModel() {
 
                         }
 
+                    }
+
+                    else if (response.code() == 500) {
+                        Log.e("ERROR_RESPONSE6", "gg")
+                        myView!!.showError(Constants.CONNECTION_FAIL, "500")
+
                     } else {
                         if (response.errorBody() != null) {
                             Log.e("ERROR_RESPONSE3", "gg")

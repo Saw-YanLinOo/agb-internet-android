@@ -10,14 +10,17 @@ object EndPoints {
 
 
     //api new Uat url
-//    const val BASE_URL = "http://10.103.0.78/billing_api/api/"
+//    const val BASE_URL = "http://121.54.165.42/api/api/"
 //    var BASE_URL = "http://10.103.0.64:8080/AGBBilling_API/api/"
 //    const val BASE_URL = "http://121.54.165.124:8080/billing_api/api/"
 
 //    const val BASE_URL = "http://121.54.167.110/agb_billing/api/"
 
     //API Prod URL
-    const val BASE_URL = "https://app.agbcommunication.com/api/api/"
+//    const val BASE_URL = "https://app.agbcommunication.com/api/api/"
+
+    // Testing URL
+    const val BASE_URL = "http://app.agb.com.mm/api/api/"
 
     var BASE_TICKET_URL = ""
 
