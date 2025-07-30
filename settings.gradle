@@ -8,5 +8,5 @@ dependencyResolutionManagement {
     }
 }
 rootProject.name = "AGB Internet"
-include ':app'
+include ':app', ':libs'
 include ':InkPageIndicator'

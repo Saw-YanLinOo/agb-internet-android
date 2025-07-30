@@ -743,9 +743,10 @@ class MainActivity : BaseActivity(), BannerDelegate,
     private fun startPay() {
         try {
 //            buildOrderInfo()
-            com.kbzbank.payment.KBZPay.startPay(this, mOrderInfo, mSign, mSignType)
+            // TODO: check if KBZPay is initialized
+            KBZPay.startPay(this, mOrderInfo, mSign, mSignType)
         } catch (ex: Exception) {
-
+            Log.e("PAYMENT", "KBZ Payment Error",ex)
         }
     }
 
@@ -853,7 +854,7 @@ class MainActivity : BaseActivity(), BannerDelegate,
         if (response.data != null) {
             val paymentVO = response.data
             mInvoiceVO?.cbPayQRUrl = paymentVO!!.cbPayQRCode
-            mInvoiceVO?.referenceNo = paymentVO.referenceNo
+            mInvoiceVO?.referenceNo = paymentVO?.referenceNo
             startActivity(
                 CBPayInformationActivity.newInstance(
                     this,

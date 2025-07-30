@@ -132,8 +132,9 @@ dependencies {
     implementation 'com.github.ybq:Android-SpinKit:1.4.0'
 
     //KBZ SDK
-    implementation fileTree(include: ['*.jar'], dir: 'libs')
-    implementation files('libs/kbzsdk.jar')
+    implementation fileTree(include: ['*.jar','*.aar'], dir: 'libs')
+//    implementation files('libs/kbzsdk.jar')
+    implementation files('libs/kbzsdk_1.1.0.aar')
 //    implementation 'com.lzy.net:okgo:3.0.4'
     implementation 'com.github.jeasonlzy:okhttp-OkGo:3.0.4'
 

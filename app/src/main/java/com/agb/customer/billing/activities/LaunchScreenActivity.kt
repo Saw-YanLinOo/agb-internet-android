@@ -46,7 +46,7 @@ class LaunchScreenActivity : BaseActivity() {
         hideStatusBar()
         setContentView(binding.root)
 
-//        PreferenceUtils.setBaseUrl("http://app.agbcommunication.com.mm/api/api/")
+//        PreferenceUtils.setBaseUrl("http://app.agb.com.mm/api/api/")
 
         checkBaseURLsAndProceed()
 
@@ -66,23 +66,23 @@ class LaunchScreenActivity : BaseActivity() {
     }
 
     private fun checkBaseURL(baseUrl: String) {
-        val request = LoginRequest().apply {
-            username = "AGB-EMP-00325"
-            password = "2"
-        }
+
+        // Extract the base part for HEAD check
+        // From "https://app.agbcommunication.com/api/api/" get "https://app.agbcommunication.com/api"
+        val baseUrlForCheck = baseUrl.removeSuffix("api/")
 
         // Create a temporary RestClient instance with the current baseUrl
-        val tempApiService = createTempApiService(baseUrl)
+        val tempApiService = createTempApiService(baseUrlForCheck)
 
-        tempApiService.getLogin(request)
-            .enqueue(object : Callback<LoginResponse> {
-                override fun onFailure(call: retrofit2.Call<LoginResponse>, t: Throwable) {
+        tempApiService.checkBaseUrl()
+            .enqueue(object : Callback<Void> {
+                override fun onFailure(call: retrofit2.Call<Void>, t: Throwable) {
                     handleBaseUrlFailure()
                 }
 
                 override fun onResponse(
-                    call: retrofit2.Call<LoginResponse>,
-                    response: retrofit2.Response<LoginResponse>
+                    call: retrofit2.Call<Void>,
+                    response: retrofit2.Response<Void>
                 ) {
                     if (response.isSuccessful) {
                         // Base URL is working, save it and proceed

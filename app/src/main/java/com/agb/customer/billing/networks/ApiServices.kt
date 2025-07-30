@@ -29,8 +29,12 @@ import com.agb.customer.billing.networks.EndPoints.TICKET_LIST_URL
 import com.agb.customer.billing.networks.EndPoints.TNC
 import com.agb.customer.billing.networks.requests.*
 import com.agb.customer.billing.networks.responses.*
+import retrofit2.http.HEAD
 
 interface ApiServices {
+
+    @HEAD(".")
+    fun checkBaseUrl(): Call<Void>
 
     @POST(LOGIN_URL)
     fun getLogin(@Body req: LoginRequest): Call<LoginResponse>
