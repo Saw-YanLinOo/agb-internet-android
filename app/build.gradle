@@ -136,7 +136,8 @@ dependencies {
 //    implementation files('libs/kbzsdk.jar')
     implementation files('libs/kbzsdk_1.1.0.aar')
 //    implementation 'com.lzy.net:okgo:3.0.4'
-    implementation 'com.github.jeasonlzy:okhttp-OkGo:3.0.4'
+//    implementation 'com.github.jeasonlzy:okhttp-OkGo:3.0.4'
+    implementation files('libs/okgo-3.0.4.jar')
 
     //firebase noti
 //    implementation 'com.google.firebase:firebase-auth-ktx:21.0.1'
